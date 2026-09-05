@@ -1,0 +1,5 @@
+# film-search scoped repo — runtime state, never committed
+data/history.json
+*.log
+*.bak
+node_modules/
