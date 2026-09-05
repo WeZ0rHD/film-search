@@ -1,0 +1,2306 @@
+[
+  {
+    "id": "lady-bird-2017",
+    "title": "Lady Bird",
+    "year": 2017,
+    "country": "USA",
+    "countries": [
+      "USA"
+    ],
+    "genres": [
+      "Drama",
+      "Comedy"
+    ],
+    "themes": [
+      "coming-of-age",
+      "mother-daughter",
+      "identity",
+      "high-school"
+    ],
+    "moods": [
+      "bittersweet",
+      "hopeful",
+      "funny"
+    ],
+    "ageTarget": "14+",
+    "ageMin": 14,
+    "synopsis": "A Sacramento high-school senior clashes with her mother while dreaming of college and first love.",
+    "cast": [
+      "Saoirse Ronan",
+      "Laurie Metcalf",
+      "Tracy Letts"
+    ],
+    "director": "Greta Gerwig",
+    "runtimeMin": 94,
+    "rating": 7.4,
+    "posterHue": 8,
+    "sources": [
+      "TMDB",
+      "OMDb",
+      "Wikidata",
+      "user-index"
+    ],
+    "alternateTitle": null,
+    "keywords": [
+      "coming-of-age",
+      "mother-daughter",
+      "identity",
+      "high-school",
+      "drama",
+      "comedy",
+      "bittersweet",
+      "hopeful",
+      "funny"
+    ],
+    "ratingSource": "IMDb snapshot via TMDB/OMDb (curated 2026-09-05)",
+    "provenance": {
+      "origin": "curated-local",
+      "sources": [
+        "TMDB",
+        "OMDb",
+        "Wikidata",
+        "user-index"
+      ],
+      "verified": "2026-09-05",
+      "note": "Legitimate metadata catalogue. No streaming/download. Live enrichment optional via Wikipedia/Wikidata."
+    }
+  },
+  {
+    "id": "perks-wallflower-2012",
+    "title": "The Perks of Being a Wallflower",
+    "year": 2012,
+    "country": "USA",
+    "countries": [
+      "USA"
+    ],
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "themes": [
+      "coming-of-age",
+      "friendship",
+      "mental-health",
+      "high-school"
+    ],
+    "moods": [
+      "bittersweet",
+      "hopeful",
+      "tender"
+    ],
+    "ageTarget": "14+",
+    "ageMin": 14,
+    "synopsis": "An introverted freshman finds friendship and healing with two seniors who take him in.",
+    "cast": [
+      "Logan Lerman",
+      "Emma Watson",
+      "Ezra Miller"
+    ],
+    "director": "Stephen Chbosky",
+    "runtimeMin": 103,
+    "rating": 8,
+    "posterHue": 210,
+    "sources": [
+      "TMDB",
+      "OMDb",
+      "Wikidata",
+      "user-index"
+    ],
+    "alternateTitle": "The Perks of Being a Wallflower",
+    "keywords": [
+      "coming-of-age",
+      "friendship",
+      "mental-health",
+      "high-school",
+      "drama",
+      "romance",
+      "bittersweet",
+      "hopeful",
+      "tender"
+    ],
+    "ratingSource": "IMDb snapshot via TMDB/OMDb (curated 2026-09-05)",
+    "provenance": {
+      "origin": "curated-local",
+      "sources": [
+        "TMDB",
+        "OMDb",
+        "Wikidata",
+        "user-index"
+      ],
+      "verified": "2026-09-05",
+      "note": "Legitimate metadata catalogue. No streaming/download. Live enrichment optional via Wikipedia/Wikidata."
+    }
+  },
+  {
+    "id": "eighth-grade-2018",
+    "title": "Eighth Grade",
+    "year": 2018,
+    "country": "USA",
+    "countries": [
+      "USA"
+    ],
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "themes": [
+      "coming-of-age",
+      "social-media",
+      "anxiety",
+      "middle-school"
+    ],
+    "moods": [
+      "awkward",
+      "hopeful",
+      "tender"
+    ],
+    "ageTarget": "13+",
+    "ageMin": 13,
+    "synopsis": "A shy 13-year-old vlogs her way through the last week of middle school.",
+    "cast": [
+      "Elsie Fisher",
+      "Josh Hamilton"
+    ],
+    "director": "Bo Burnham",
+    "runtimeMin": 94,
+    "rating": 7.4,
+    "posterHue": 265,
+    "sources": [
+      "TMDB",
+      "OMDb",
+      "Wikidata",
+      "user-index"
+    ],
+    "alternateTitle": null,
+    "keywords": [
+      "coming-of-age",
+      "social-media",
+      "anxiety",
+      "middle-school",
+      "comedy",
+      "drama",
+      "awkward",
+      "hopeful",
+      "tender"
+    ],
+    "ratingSource": "IMDb snapshot via TMDB/OMDb (curated 2026-09-05)",
+    "provenance": {
+      "origin": "curated-local",
+      "sources": [
+        "TMDB",
+        "OMDb",
+        "Wikidata",
+        "user-index"
+      ],
+      "verified": "2026-09-05",
+      "note": "Legitimate metadata catalogue. No streaming/download. Live enrichment optional via Wikipedia/Wikidata."
+    }
+  },
+  {
+    "id": "booksmart-2019",
+    "title": "Booksmart",
+    "year": 2019,
+    "country": "USA",
+    "countries": [
+      "USA"
+    ],
+    "genres": [
+      "Comedy"
+    ],
+    "themes": [
+      "friendship",
+      "high-school",
+      "graduation",
+      "identity"
+    ],
+    "moods": [
+      "funny",
+      "energetic",
+      "hopeful"
+    ],
+    "ageTarget": "15+",
+    "ageMin": 15,
+    "synopsis": "Two overachieving best friends cram four years of fun into one graduation-eve night.",
+    "cast": [
+      "Kaitlyn Dever",
+      "Beanie Feldstein"
+    ],
+    "director": "Olivia Wilde",
+    "runtimeMin": 102,
+    "rating": 7.1,
+    "posterHue": 320,
+    "sources": [
+      "TMDB",
+      "OMDb",
+      "Wikidata",
+      "user-index"
+    ],
+    "alternateTitle": null,
+    "keywords": [
+      "friendship",
+      "high-school",
+      "graduation",
+      "identity",
+      "comedy",
+      "funny",
+      "energetic",
+      "hopeful"
+    ],
+    "ratingSource": "IMDb snapshot via TMDB/OMDb (curated 2026-09-05)",
+    "provenance": {
+      "origin": "curated-local",
+      "sources": [
+        "TMDB",
+        "OMDb",
+        "Wikidata",
+        "user-index"
+      ],
+      "verified": "2026-09-05",
+      "note": "Legitimate metadata catalogue. No streaming/download. Live enrichment optional via Wikipedia/Wikidata."
+    }
+  },
+  {
+    "id": "to-all-boys-2018",
+    "title": "To All the Boys I've Loved Before",
+    "year": 2018,
+    "country": "USA",
+    "countries": [
+      "USA"
+    ],
+    "genres": [
+      "Romance",
+      "Comedy",
+      "Drama"
+    ],
+    "themes": [
+      "first-love",
+      "high-school",
+      "family",
+      "identity"
+    ],
+    "moods": [
+      "sweet",
+      "hopeful",
+      "light"
+    ],
+    "ageTarget": "12+",
+    "ageMin": 12,
+    "synopsis": "A teen's secret love letters are mailed out, forcing her into a fake romance that turns real.",
+    "cast": [
+      "Lana Condor",
+      "Noah Centineo"
+    ],
+    "director": "Susan Johnson",
+    "runtimeMin": 102,
+    "rating": 7,
+    "posterHue": 340,
+    "sources": [
+      "TMDB",
+      "OMDb",
+      "Wikidata",
+      "user-index"
+    ],
+    "alternateTitle": "To All the Boys I've Loved Before",
+    "keywords": [
+      "first-love",
+      "high-school",
+      "family",
+      "identity",
+      "romance",
+      "comedy",
+      "drama",
+      "sweet",
+      "hopeful",
+      "light"
+    ],
+    "ratingSource": "IMDb snapshot via TMDB/OMDb (curated 2026-09-05)",
+    "provenance": {
+      "origin": "curated-local",
+      "sources": [
+        "TMDB",
+        "OMDb",
+        "Wikidata",
+        "user-index"
+      ],
+      "verified": "2026-09-05",
+      "note": "Legitimate metadata catalogue. No streaming/download. Live enrichment optional via Wikipedia/Wikidata."
+    }
+  },
+  {
+    "id": "hunger-games-2012",
+    "title": "The Hunger Games",
+    "year": 2012,
+    "country": "USA",
+    "countries": [
+      "USA"
+    ],
+    "genres": [
+      "Sci-Fi",
+      "Adventure",
+      "Drama"
+    ],
+    "themes": [
+      "dystopia",
+      "survival",
+      "rebellion",
+      "young-adult"
+    ],
+    "moods": [
+      "tense",
+      "gritty",
+      "hopeful"
+    ],
+    "ageTarget": "13+",
+    "ageMin": 13,
+    "synopsis": "A teen volunteers for a televised fight to the death to save her sister and sparks rebellion.",
+    "cast": [
+      "Jennifer Lawrence",
+      "Josh Hutcherson"
+    ],
+    "director": "Gary Ross",
+    "runtimeMin": 142,
+    "rating": 7.2,
+    "posterHue": 25,
+    "sources": [
+      "TMDB",
+      "OMDb",
+      "Wikidata",
+      "user-index"
+    ],
+    "alternateTitle": "The Hunger Games",
+    "keywords": [
+      "dystopia",
+      "survival",
+      "rebellion",
+      "young-adult",
+      "sci-fi",
+      "adventure",
+      "drama",
+      "tense",
+      "gritty",
+      "hopeful"
+    ],
+    "ratingSource": "IMDb snapshot via TMDB/OMDb (curated 2026-09-05)",
+    "provenance": {
+      "origin": "curated-local",
+      "sources": [
+        "TMDB",
+        "OMDb",
+        "Wikidata",
+        "user-index"
+      ],
+      "verified": "2026-09-05",
+      "note": "Legitimate metadata catalogue. No streaming/download. Live enrichment optional via Wikipedia/Wikidata."
+    }
+  },
+  {
+    "id": "divergent-2014",
+    "title": "Divergent",
+    "year": 2014,
+    "country": "USA",
+    "countries": [
+      "USA"
+    ],
+    "genres": [
+      "Sci-Fi",
+      "Adventure"
+    ],
+    "themes": [
+      "dystopia",
+      "identity",
+      "young-adult",
+      "rebellion"
+    ],
+    "moods": [
+      "tense",
+      "action-packed"
+    ],
+    "ageTarget": "13+",
+    "ageMin": 13,
+    "synopsis": "In a faction-divided Chicago, a girl who fits nowhere fights to belong and resist control.",
+    "cast": [
+      "Shailene Woodley",
+      "Theo James"
+    ],
+    "director": "Neil Burger",
+    "runtimeMin": 139,
+    "rating": 6.6,
+    "posterHue": 200,
+    "sources": [
+      "TMDB",
+      "OMDb",
+      "Wikidata",
+      "user-index"
+    ],
+    "alternateTitle": null,
+    "keywords": [
+      "dystopia",
+      "identity",
+      "young-adult",
+      "rebellion",
+      "sci-fi",
+      "adventure",
+      "tense",
+      "action-packed"
+    ],
+    "ratingSource": "IMDb snapshot via TMDB/OMDb (curated 2026-09-05)",
+    "provenance": {
+      "origin": "curated-local",
+      "sources": [
+        "TMDB",
+        "OMDb",
+        "Wikidata",
+        "user-index"
+      ],
+      "verified": "2026-09-05",
+      "note": "Legitimate metadata catalogue. No streaming/download. Live enrichment optional via Wikipedia/Wikidata."
+    }
+  },
+  {
+    "id": "maze-runner-2014",
+    "title": "The Maze Runner",
+    "year": 2014,
+    "country": "USA",
+    "countries": [
+      "USA",
+      "UK"
+    ],
+    "genres": [
+      "Sci-Fi",
+      "Mystery",
+      "Action"
+    ],
+    "themes": [
+      "dystopia",
+      "survival",
+      "friendship",
+      "young-adult"
+    ],
+    "moods": [
+      "tense",
+      "mysterious"
+    ],
+    "ageTarget": "13+",
+    "ageMin": 13,
+    "synopsis": "A boy wakes in a maze with no memory and joins others plotting escape.",
+    "cast": [
+      "Dylan O'Brien",
+      "Kaya Scodelario"
+    ],
+    "director": "Wes Ball",
+    "runtimeMin": 113,
+    "rating": 6.8,
+    "posterHue": 150,
+    "sources": [
+      "TMDB",
+      "OMDb",
+      "Wikidata",
+      "user-index"
+    ],
+    "alternateTitle": "The Maze Runner",
+    "keywords": [
+      "dystopia",
+      "survival",
+      "friendship",
+      "young-adult",
+      "sci-fi",
+      "mystery",
+      "action",
+      "tense",
+      "mysterious"
+    ],
+    "ratingSource": "IMDb snapshot via TMDB/OMDb (curated 2026-09-05)",
+    "provenance": {
+      "origin": "curated-local",
+      "sources": [
+        "TMDB",
+        "OMDb",
+        "Wikidata",
+        "user-index"
+      ],
+      "verified": "2026-09-05",
+      "note": "Legitimate metadata catalogue. No streaming/download. Live enrichment optional via Wikipedia/Wikidata."
+    }
+  },
+  {
+    "id": "twilight-2008",
+    "title": "Twilight",
+    "year": 2008,
+    "country": "USA",
+    "countries": [
+      "USA"
+    ],
+    "genres": [
+      "Fantasy",
+      "Romance",
+      "Drama"
+    ],
+    "themes": [
+      "first-love",
+      "vampires",
+      "young-adult",
+      "identity"
+    ],
+    "moods": [
+      "moody",
+      "romantic"
+    ],
+    "ageTarget": "12+",
+    "ageMin": 12,
+    "synopsis": "A teen falls for a vampire classmate in rainy Forks, igniting a supernatural romance.",
+    "cast": [
+      "Kristen Stewart",
+      "Robert Pattinson"
+    ],
+    "director": "Catherine Hardwicke",
+    "runtimeMin": 122,
+    "rating": 5.3,
+    "posterHue": 230,
+    "sources": [
+      "TMDB",
+      "OMDb",
+      "Wikidata",
+      "user-index"
+    ],
+    "alternateTitle": null,
+    "keywords": [
+      "first-love",
+      "vampires",
+      "young-adult",
+      "identity",
+      "fantasy",
+      "romance",
+      "drama",
+      "moody",
+      "romantic"
+    ],
+    "ratingSource": "IMDb snapshot via TMDB/OMDb (curated 2026-09-05)",
+    "provenance": {
+      "origin": "curated-local",
+      "sources": [
+        "TMDB",
+        "OMDb",
+        "Wikidata",
+        "user-index"
+      ],
+      "verified": "2026-09-05",
+      "note": "Legitimate metadata catalogue. No streaming/download. Live enrichment optional via Wikipedia/Wikidata."
+    }
+  },
+  {
+    "id": "fault-stars-2014",
+    "title": "The Fault in Our Stars",
+    "year": 2014,
+    "country": "USA",
+    "countries": [
+      "USA"
+    ],
+    "genres": [
+      "Romance",
+      "Drama"
+    ],
+    "themes": [
+      "first-love",
+      "illness",
+      "young-adult",
+      "grief"
+    ],
+    "moods": [
+      "bittersweet",
+      "tender",
+      "heartbreaking"
+    ],
+    "ageTarget": "13+",
+    "ageMin": 13,
+    "synopsis": "Two teens with cancer fall in love and travel to Amsterdam to meet a favorite author.",
+    "cast": [
+      "Shailene Woodley",
+      "Ansel Elgort"
+    ],
+    "director": "Josh Boone",
+    "runtimeMin": 126,
+    "rating": 7.7,
+    "posterHue": 190,
+    "sources": [
+      "TMDB",
+      "OMDb",
+      "Wikidata",
+      "user-index"
+    ],
+    "alternateTitle": "The Fault in Our Stars",
+    "keywords": [
+      "first-love",
+      "illness",
+      "young-adult",
+      "grief",
+      "romance",
+      "drama",
+      "bittersweet",
+      "tender",
+      "heartbreaking"
+    ],
+    "ratingSource": "IMDb snapshot via TMDB/OMDb (curated 2026-09-05)",
+    "provenance": {
+      "origin": "curated-local",
+      "sources": [
+        "TMDB",
+        "OMDb",
+        "Wikidata",
+        "user-index"
+      ],
+      "verified": "2026-09-05",
+      "note": "Legitimate metadata catalogue. No streaming/download. Live enrichment optional via Wikipedia/Wikidata."
+    }
+  },
+  {
+    "id": "stand-by-me-1986",
+    "title": "Stand by Me",
+    "year": 1986,
+    "country": "USA",
+    "countries": [
+      "USA"
+    ],
+    "genres": [
+      "Drama",
+      "Adventure"
+    ],
+    "themes": [
+      "coming-of-age",
+      "friendship",
+      "loss",
+      "summer"
+    ],
+    "moods": [
+      "nostalgic",
+      "bittersweet",
+      "warm"
+    ],
+    "ageTarget": "12+",
+    "ageMin": 12,
+    "synopsis": "Four boys hike to find a missing teen and confront grief and growing up.",
+    "cast": [
+      "Wil Wheaton",
+      "River Phoenix",
+      "Corey Feldman"
+    ],
+    "director": "Rob Reiner",
+    "runtimeMin": 89,
+    "rating": 8.1,
+    "posterHue": 90,
+    "sources": [
+      "TMDB",
+      "OMDb",
+      "Wikidata",
+      "user-index"
+    ],
+    "alternateTitle": null,
+    "keywords": [
+      "coming-of-age",
+      "friendship",
+      "loss",
+      "summer",
+      "drama",
+      "adventure",
+      "nostalgic",
+      "bittersweet",
+      "warm"
+    ],
+    "ratingSource": "IMDb snapshot via TMDB/OMDb (curated 2026-09-05)",
+    "provenance": {
+      "origin": "curated-local",
+      "sources": [
+        "TMDB",
+        "OMDb",
+        "Wikidata",
+        "user-index"
+      ],
+      "verified": "2026-09-05",
+      "note": "Legitimate metadata catalogue. No streaming/download. Live enrichment optional via Wikipedia/Wikidata."
+    }
+  },
+  {
+    "id": "dead-poets-1989",
+    "title": "Dead Poets Society",
+    "year": 1989,
+    "country": "USA",
+    "countries": [
+      "USA"
+    ],
+    "genres": [
+      "Drama"
+    ],
+    "themes": [
+      "poetry",
+      "rebellion",
+      "boarding-school",
+      "mentorship"
+    ],
+    "moods": [
+      "inspiring",
+      "bittersweet"
+    ],
+    "ageTarget": "13+",
+    "ageMin": 13,
+    "synopsis": "An English teacher inspires prep-school boys to seize the day through poetry.",
+    "cast": [
+      "Robin Williams",
+      "Ethan Hawke"
+    ],
+    "director": "Peter Weir",
+    "runtimeMin": 128,
+    "rating": 8.1,
+    "posterHue": 45,
+    "sources": [
+      "TMDB",
+      "OMDb",
+      "Wikidata",
+      "user-index"
+    ],
+    "alternateTitle": "Dead Poets Society",
+    "keywords": [
+      "poetry",
+      "rebellion",
+      "boarding-school",
+      "mentorship",
+      "drama",
+      "inspiring",
+      "bittersweet"
+    ],
+    "ratingSource": "IMDb snapshot via TMDB/OMDb (curated 2026-09-05)",
+    "provenance": {
+      "origin": "curated-local",
+      "sources": [
+        "TMDB",
+        "OMDb",
+        "Wikidata",
+        "user-index"
+      ],
+      "verified": "2026-09-05",
+      "note": "Legitimate metadata catalogue. No streaming/download. Live enrichment optional via Wikipedia/Wikidata."
+    }
+  },
+  {
+    "id": "clueless-1995",
+    "title": "Clueless",
+    "year": 1995,
+    "country": "USA",
+    "countries": [
+      "USA"
+    ],
+    "genres": [
+      "Comedy",
+      "Romance"
+    ],
+    "themes": [
+      "high-school",
+      "friendship",
+      "makeover",
+      "90s"
+    ],
+    "moods": [
+      "funny",
+      "light",
+      "stylish"
+    ],
+    "ageTarget": "12+",
+    "ageMin": 12,
+    "synopsis": "A Beverly Hills teen plays matchmaker while learning about love herself.",
+    "cast": [
+      "Alicia Silverstone",
+      "Brittany Murphy"
+    ],
+    "director": "Amy Heckerling",
+    "runtimeMin": 97,
+    "rating": 6.9,
+    "posterHue": 55,
+    "sources": [
+      "TMDB",
+      "OMDb",
+      "Wikidata",
+      "user-index"
+    ],
+    "alternateTitle": null,
+    "keywords": [
+      "high-school",
+      "friendship",
+      "makeover",
+      "90s",
+      "comedy",
+      "romance",
+      "funny",
+      "light",
+      "stylish"
+    ],
+    "ratingSource": "IMDb snapshot via TMDB/OMDb (curated 2026-09-05)",
+    "provenance": {
+      "origin": "curated-local",
+      "sources": [
+        "TMDB",
+        "OMDb",
+        "Wikidata",
+        "user-index"
+      ],
+      "verified": "2026-09-05",
+      "note": "Legitimate metadata catalogue. No streaming/download. Live enrichment optional via Wikipedia/Wikidata."
+    }
+  },
+  {
+    "id": "10-things-1999",
+    "title": "10 Things I Hate About You",
+    "year": 1999,
+    "country": "USA",
+    "countries": [
+      "USA"
+    ],
+    "genres": [
+      "Comedy",
+      "Romance",
+      "Drama"
+    ],
+    "themes": [
+      "high-school",
+      "first-love",
+      "shakespeare",
+      "90s"
+    ],
+    "moods": [
+      "funny",
+      "romantic",
+      "sweet"
+    ],
+    "ageTarget": "12+",
+    "ageMin": 12,
+    "synopsis": "A bad boy is paid to date a sharp-tongued teen in this modern Taming of the Shrew.",
+    "cast": [
+      "Heath Ledger",
+      "Julia Stiles"
+    ],
+    "director": "Gil Junger",
+    "runtimeMin": 97,
+    "rating": 7.3,
+    "posterHue": 300,
+    "sources": [
+      "TMDB",
+      "OMDb",
+      "Wikidata",
+      "user-index"
+    ],
+    "alternateTitle": "10 Things I Hate About You",
+    "keywords": [
+      "high-school",
+      "first-love",
+      "shakespeare",
+      "90s",
+      "comedy",
+      "romance",
+      "drama",
+      "funny",
+      "romantic",
+      "sweet"
+    ],
+    "ratingSource": "IMDb snapshot via TMDB/OMDb (curated 2026-09-05)",
+    "provenance": {
+      "origin": "curated-local",
+      "sources": [
+        "TMDB",
+        "OMDb",
+        "Wikidata",
+        "user-index"
+      ],
+      "verified": "2026-09-05",
+      "note": "Legitimate metadata catalogue. No streaming/download. Live enrichment optional via Wikipedia/Wikidata."
+    }
+  },
+  {
+    "id": "juno-2007",
+    "title": "Juno",
+    "year": 2007,
+    "country": "USA",
+    "countries": [
+      "USA"
+    ],
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "themes": [
+      "pregnancy",
+      "coming-of-age",
+      "family",
+      "high-school"
+    ],
+    "moods": [
+      "witty",
+      "bittersweet",
+      "warm"
+    ],
+    "ageTarget": "14+",
+    "ageMin": 14,
+    "synopsis": "A witty teen navigates an unplanned pregnancy and adoption with humor and heart.",
+    "cast": [
+      "Elliot Page",
+      "Michael Cera",
+      "Jennifer Garner"
+    ],
+    "director": "Jason Reitman",
+    "runtimeMin": 96,
+    "rating": 7.4,
+    "posterHue": 20,
+    "sources": [
+      "TMDB",
+      "OMDb",
+      "Wikidata",
+      "user-index"
+    ],
+    "alternateTitle": null,
+    "keywords": [
+      "pregnancy",
+      "coming-of-age",
+      "family",
+      "high-school",
+      "comedy",
+      "drama",
+      "witty",
+      "bittersweet",
+      "warm"
+    ],
+    "ratingSource": "IMDb snapshot via TMDB/OMDb (curated 2026-09-05)",
+    "provenance": {
+      "origin": "curated-local",
+      "sources": [
+        "TMDB",
+        "OMDb",
+        "Wikidata",
+        "user-index"
+      ],
+      "verified": "2026-09-05",
+      "note": "Legitimate metadata catalogue. No streaming/download. Live enrichment optional via Wikipedia/Wikidata."
+    }
+  },
+  {
+    "id": "spider-verse-2018",
+    "title": "Spider-Man: Into the Spider-Verse",
+    "year": 2018,
+    "country": "USA",
+    "countries": [
+      "USA"
+    ],
+    "genres": [
+      "Animation",
+      "Action",
+      "Adventure"
+    ],
+    "themes": [
+      "superhero",
+      "multiverse",
+      "coming-of-age",
+      "mentorship"
+    ],
+    "moods": [
+      "energetic",
+      "funny",
+      "inspiring"
+    ],
+    "ageTarget": "10+",
+    "ageMin": 10,
+    "synopsis": "Teen Miles Morales meets Spider-heroes from other dimensions to save Brooklyn.",
+    "cast": [
+      "Shameik Moore",
+      "Jake Johnson",
+      "Hailee Steinfeld"
+    ],
+    "director": "Bob Persichetti",
+    "runtimeMin": 117,
+    "rating": 8.4,
+    "posterHue": 350,
+    "sources": [
+      "TMDB",
+      "OMDb",
+      "Wikidata",
+      "user-index"
+    ],
+    "alternateTitle": "Spider-Man: Into the Spider-Verse",
+    "keywords": [
+      "superhero",
+      "multiverse",
+      "coming-of-age",
+      "mentorship",
+      "animation",
+      "action",
+      "adventure",
+      "energetic",
+      "funny",
+      "inspiring"
+    ],
+    "ratingSource": "IMDb snapshot via TMDB/OMDb (curated 2026-09-05)",
+    "provenance": {
+      "origin": "curated-local",
+      "sources": [
+        "TMDB",
+        "OMDb",
+        "Wikidata",
+        "user-index"
+      ],
+      "verified": "2026-09-05",
+      "note": "Legitimate metadata catalogue. No streaming/download. Live enrichment optional via Wikipedia/Wikidata."
+    }
+  },
+  {
+    "id": "your-name-2016",
+    "title": "Your Name (Kimi no Na wa)",
+    "year": 2016,
+    "country": "Japan",
+    "countries": [
+      "Japan"
+    ],
+    "genres": [
+      "Animation",
+      "Romance",
+      "Fantasy",
+      "Drama"
+    ],
+    "themes": [
+      "body-swap",
+      "first-love",
+      "time",
+      "coming-of-age"
+    ],
+    "moods": [
+      "dreamy",
+      "bittersweet",
+      "hopeful"
+    ],
+    "ageTarget": "12+",
+    "ageMin": 12,
+    "synopsis": "A Tokyo boy and a small-town girl swap bodies and race time to meet.",
+    "cast": [
+      "Ryunosuke Kamiki",
+      "Mone Kamishiraishi"
+    ],
+    "director": "Makoto Shinkai",
+    "runtimeMin": 106,
+    "rating": 8.4,
+    "posterHue": 195,
+    "sources": [
+      "TMDB",
+      "OMDb",
+      "Wikidata",
+      "user-index"
+    ],
+    "alternateTitle": "Kimi no Na wa",
+    "keywords": [
+      "body-swap",
+      "first-love",
+      "time",
+      "coming-of-age",
+      "animation",
+      "romance",
+      "fantasy",
+      "drama",
+      "dreamy",
+      "bittersweet",
+      "hopeful"
+    ],
+    "ratingSource": "IMDb snapshot via TMDB/OMDb (curated 2026-09-05)",
+    "provenance": {
+      "origin": "curated-local",
+      "sources": [
+        "TMDB",
+        "OMDb",
+        "Wikidata",
+        "user-index"
+      ],
+      "verified": "2026-09-05",
+      "note": "Legitimate metadata catalogue. No streaming/download. Live enrichment optional via Wikipedia/Wikidata."
+    }
+  },
+  {
+    "id": "spirited-away-2001",
+    "title": "Spirited Away",
+    "year": 2001,
+    "country": "Japan",
+    "countries": [
+      "Japan"
+    ],
+    "genres": [
+      "Animation",
+      "Fantasy",
+      "Adventure"
+    ],
+    "themes": [
+      "coming-of-age",
+      "spirits",
+      "courage",
+      "identity"
+    ],
+    "moods": [
+      "magical",
+      "mysterious",
+      "warm"
+    ],
+    "ageTarget": "10+",
+    "ageMin": 10,
+    "synopsis": "A girl works in a bathhouse for spirits to free her transformed parents.",
+    "cast": [
+      "Rumi Hiiragi",
+      "Miyu Irino"
+    ],
+    "director": "Hayao Miyazaki",
+    "runtimeMin": 125,
+    "rating": 8.6,
+    "posterHue": 170,
+    "sources": [
+      "TMDB",
+      "OMDb",
+      "Wikidata",
+      "user-index"
+    ],
+    "alternateTitle": "Sen to Chihiro no Kamikakushi",
+    "keywords": [
+      "coming-of-age",
+      "spirits",
+      "courage",
+      "identity",
+      "animation",
+      "fantasy",
+      "adventure",
+      "magical",
+      "mysterious",
+      "warm"
+    ],
+    "ratingSource": "IMDb snapshot via TMDB/OMDb (curated 2026-09-05)",
+    "provenance": {
+      "origin": "curated-local",
+      "sources": [
+        "TMDB",
+        "OMDb",
+        "Wikidata",
+        "user-index"
+      ],
+      "verified": "2026-09-05",
+      "note": "Legitimate metadata catalogue. No streaming/download. Live enrichment optional via Wikipedia/Wikidata."
+    }
+  },
+  {
+    "id": "portrait-lady-fire-2019",
+    "title": "Portrait of a Lady on Fire",
+    "year": 2019,
+    "country": "France",
+    "countries": [
+      "France"
+    ],
+    "genres": [
+      "Romance",
+      "Drama"
+    ],
+    "themes": [
+      "forbidden-love",
+      "art",
+      "memory",
+      "female-gaze"
+    ],
+    "moods": [
+      "tender",
+      "melancholic",
+      "beautiful"
+    ],
+    "ageTarget": "15+",
+    "ageMin": 15,
+    "synopsis": "A painter secretly paints a bride-to-be in 18th-century Brittany; they fall in love.",
+    "cast": [
+      "Noemie Merlant",
+      "Adele Haenel"
+    ],
+    "director": "Celine Sciamma",
+    "runtimeMin": 122,
+    "rating": 8.1,
+    "posterHue": 10,
+    "sources": [
+      "TMDB",
+      "OMDb",
+      "Wikidata",
+      "user-index"
+    ],
+    "alternateTitle": "Portrait de la jeune fille en feu",
+    "keywords": [
+      "forbidden-love",
+      "art",
+      "memory",
+      "female-gaze",
+      "romance",
+      "drama",
+      "tender",
+      "melancholic",
+      "beautiful"
+    ],
+    "ratingSource": "IMDb snapshot via TMDB/OMDb (curated 2026-09-05)",
+    "provenance": {
+      "origin": "curated-local",
+      "sources": [
+        "TMDB",
+        "OMDb",
+        "Wikidata",
+        "user-index"
+      ],
+      "verified": "2026-09-05",
+      "note": "Legitimate metadata catalogue. No streaming/download. Live enrichment optional via Wikipedia/Wikidata."
+    }
+  },
+  {
+    "id": "blue-warmest-2013",
+    "title": "Blue Is the Warmest Colour",
+    "year": 2013,
+    "country": "France",
+    "countries": [
+      "France"
+    ],
+    "genres": [
+      "Romance",
+      "Drama"
+    ],
+    "themes": [
+      "first-love",
+      "coming-of-age",
+      "identity",
+      "young-adult"
+    ],
+    "moods": [
+      "intense",
+      "tender",
+      "bittersweet"
+    ],
+    "ageTarget": "17+",
+    "ageMin": 17,
+    "synopsis": "A French teen discovers desire and heartbreak with an art student.",
+    "cast": [
+      "Lea Seydoux",
+      "Adele Exarchopoulos"
+    ],
+    "director": "Abdellatif Kechiche",
+    "runtimeMin": 179,
+    "rating": 7.7,
+    "posterHue": 205,
+    "sources": [
+      "TMDB",
+      "OMDb",
+      "Wikidata",
+      "user-index"
+    ],
+    "alternateTitle": "La Vie d'Adele",
+    "keywords": [
+      "first-love",
+      "coming-of-age",
+      "identity",
+      "young-adult",
+      "romance",
+      "drama",
+      "intense",
+      "tender",
+      "bittersweet"
+    ],
+    "ratingSource": "IMDb snapshot via TMDB/OMDb (curated 2026-09-05)",
+    "provenance": {
+      "origin": "curated-local",
+      "sources": [
+        "TMDB",
+        "OMDb",
+        "Wikidata",
+        "user-index"
+      ],
+      "verified": "2026-09-05",
+      "note": "Legitimate metadata catalogue. No streaming/download. Live enrichment optional via Wikipedia/Wikidata."
+    }
+  },
+  {
+    "id": "intouchables-2011",
+    "title": "The Intouchables",
+    "year": 2011,
+    "country": "France",
+    "countries": [
+      "France"
+    ],
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Biography"
+    ],
+    "themes": [
+      "friendship",
+      "disability",
+      "class",
+      "hope"
+    ],
+    "moods": [
+      "warm",
+      "funny",
+      "uplifting"
+    ],
+    "ageTarget": "13+",
+    "ageMin": 13,
+    "synopsis": "An aristocrat hires a young caregiver from the projects; an unlikely friendship blooms.",
+    "cast": [
+      "Francois Cluzet",
+      "Omar Sy"
+    ],
+    "director": "Olivier Nakache",
+    "runtimeMin": 112,
+    "rating": 8.5,
+    "posterHue": 35,
+    "sources": [
+      "TMDB",
+      "OMDb",
+      "Wikidata",
+      "user-index"
+    ],
+    "alternateTitle": "Intouchables",
+    "keywords": [
+      "friendship",
+      "disability",
+      "class",
+      "hope",
+      "comedy",
+      "drama",
+      "biography",
+      "warm",
+      "funny",
+      "uplifting"
+    ],
+    "ratingSource": "IMDb snapshot via TMDB/OMDb (curated 2026-09-05)",
+    "provenance": {
+      "origin": "curated-local",
+      "sources": [
+        "TMDB",
+        "OMDb",
+        "Wikidata",
+        "user-index"
+      ],
+      "verified": "2026-09-05",
+      "note": "Legitimate metadata catalogue. No streaming/download. Live enrichment optional via Wikipedia/Wikidata."
+    }
+  },
+  {
+    "id": "3-idiots-2009",
+    "title": "3 Idiots",
+    "year": 2009,
+    "country": "India",
+    "countries": [
+      "India"
+    ],
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "themes": [
+      "friendship",
+      "education",
+      "pressure",
+      "young-adult"
+    ],
+    "moods": [
+      "funny",
+      "uplifting",
+      "hopeful"
+    ],
+    "ageTarget": "12+",
+    "ageMin": 12,
+    "synopsis": "Two friends search for their missing college genius who challenged rote learning.",
+    "cast": [
+      "Aamir Khan",
+      "R. Madhavan",
+      "Sharman Joshi"
+    ],
+    "director": "Rajkumar Hirani",
+    "runtimeMin": 170,
+    "rating": 8.4,
+    "posterHue": 40,
+    "sources": [
+      "TMDB",
+      "OMDb",
+      "Wikidata",
+      "user-index"
+    ],
+    "alternateTitle": "3 Idiots",
+    "keywords": [
+      "friendship",
+      "education",
+      "pressure",
+      "young-adult",
+      "comedy",
+      "drama",
+      "funny",
+      "uplifting",
+      "hopeful"
+    ],
+    "ratingSource": "IMDb snapshot via TMDB/OMDb (curated 2026-09-05)",
+    "provenance": {
+      "origin": "curated-local",
+      "sources": [
+        "TMDB",
+        "OMDb",
+        "Wikidata",
+        "user-index"
+      ],
+      "verified": "2026-09-05",
+      "note": "Legitimate metadata catalogue. No streaming/download. Live enrichment optional via Wikipedia/Wikidata."
+    }
+  },
+  {
+    "id": "dangal-2016",
+    "title": "Dangal",
+    "year": 2016,
+    "country": "India",
+    "countries": [
+      "India"
+    ],
+    "genres": [
+      "Sport",
+      "Drama",
+      "Biography"
+    ],
+    "themes": [
+      "wrestling",
+      "family",
+      "feminism",
+      "perseverance"
+    ],
+    "moods": [
+      "inspiring",
+      "tense",
+      "warm"
+    ],
+    "ageTarget": "10+",
+    "ageMin": 10,
+    "synopsis": "A father trains his daughters to become champion wrestlers against tradition.",
+    "cast": [
+      "Aamir Khan",
+      "Fatima Sana Shaikh"
+    ],
+    "director": "Nitesh Tiwari",
+    "runtimeMin": 161,
+    "rating": 8.3,
+    "posterHue": 30,
+    "sources": [
+      "TMDB",
+      "OMDb",
+      "Wikidata",
+      "user-index"
+    ],
+    "alternateTitle": null,
+    "keywords": [
+      "wrestling",
+      "family",
+      "feminism",
+      "perseverance",
+      "sport",
+      "drama",
+      "biography",
+      "inspiring",
+      "tense",
+      "warm"
+    ],
+    "ratingSource": "IMDb snapshot via TMDB/OMDb (curated 2026-09-05)",
+    "provenance": {
+      "origin": "curated-local",
+      "sources": [
+        "TMDB",
+        "OMDb",
+        "Wikidata",
+        "user-index"
+      ],
+      "verified": "2026-09-05",
+      "note": "Legitimate metadata catalogue. No streaming/download. Live enrichment optional via Wikipedia/Wikidata."
+    }
+  },
+  {
+    "id": "roma-2018",
+    "title": "Roma",
+    "year": 2018,
+    "country": "Mexico",
+    "countries": [
+      "Mexico"
+    ],
+    "genres": [
+      "Drama"
+    ],
+    "themes": [
+      "family",
+      "class",
+      "memory",
+      "motherhood"
+    ],
+    "moods": [
+      "quiet",
+      "beautiful",
+      "melancholic"
+    ],
+    "ageTarget": "14+",
+    "ageMin": 14,
+    "synopsis": "A domestic worker in 1970s Mexico City navigates love and upheaval.",
+    "cast": [
+      "Yalitza Aparicio",
+      "Marina de Tavira"
+    ],
+    "director": "Alfonso Cuaron",
+    "runtimeMin": 135,
+    "rating": 7.7,
+    "posterHue": 60,
+    "sources": [
+      "TMDB",
+      "OMDb",
+      "Wikidata",
+      "user-index"
+    ],
+    "alternateTitle": null,
+    "keywords": [
+      "family",
+      "class",
+      "memory",
+      "motherhood",
+      "drama",
+      "quiet",
+      "beautiful",
+      "melancholic"
+    ],
+    "ratingSource": "IMDb snapshot via TMDB/OMDb (curated 2026-09-05)",
+    "provenance": {
+      "origin": "curated-local",
+      "sources": [
+        "TMDB",
+        "OMDb",
+        "Wikidata",
+        "user-index"
+      ],
+      "verified": "2026-09-05",
+      "note": "Legitimate metadata catalogue. No streaming/download. Live enrichment optional via Wikipedia/Wikidata."
+    }
+  },
+  {
+    "id": "pans-labyrinth-2006",
+    "title": "Pan's Labyrinth",
+    "year": 2006,
+    "country": "Spain",
+    "countries": [
+      "Spain",
+      "Mexico"
+    ],
+    "genres": [
+      "Fantasy",
+      "Drama",
+      "War"
+    ],
+    "themes": [
+      "fairy-tale",
+      "war",
+      "coming-of-age",
+      "courage"
+    ],
+    "moods": [
+      "dark",
+      "magical",
+      "heartbreaking"
+    ],
+    "ageTarget": "15+",
+    "ageMin": 15,
+    "synopsis": "In postwar Spain, a girl escapes into a mythic labyrinth amid fascist brutality.",
+    "cast": [
+      "Ivana Baquero",
+      "Sergi Lopez"
+    ],
+    "director": "Guillermo del Toro",
+    "runtimeMin": 118,
+    "rating": 8.2,
+    "posterHue": 140,
+    "sources": [
+      "TMDB",
+      "OMDb",
+      "Wikidata",
+      "user-index"
+    ],
+    "alternateTitle": "El laberinto del fauno",
+    "keywords": [
+      "fairy-tale",
+      "war",
+      "coming-of-age",
+      "courage",
+      "fantasy",
+      "drama",
+      "dark",
+      "magical",
+      "heartbreaking"
+    ],
+    "ratingSource": "IMDb snapshot via TMDB/OMDb (curated 2026-09-05)",
+    "provenance": {
+      "origin": "curated-local",
+      "sources": [
+        "TMDB",
+        "OMDb",
+        "Wikidata",
+        "user-index"
+      ],
+      "verified": "2026-09-05",
+      "note": "Legitimate metadata catalogue. No streaming/download. Live enrichment optional via Wikipedia/Wikidata."
+    }
+  },
+  {
+    "id": "breakfast-club-1985",
+    "title": "The Breakfast Club",
+    "year": 1985,
+    "country": "USA",
+    "countries": [
+      "USA"
+    ],
+    "genres": [
+      "Drama",
+      "Comedy"
+    ],
+    "themes": [
+      "high-school",
+      "detention",
+      "identity",
+      "80s"
+    ],
+    "moods": [
+      "funny",
+      "honest",
+      "hopeful"
+    ],
+    "ageTarget": "13+",
+    "ageMin": 13,
+    "synopsis": "Five stereotypes bond during Saturday detention and see each other anew.",
+    "cast": [
+      "Molly Ringwald",
+      "Judd Nelson",
+      "Emilio Estevez"
+    ],
+    "director": "John Hughes",
+    "runtimeMin": 97,
+    "rating": 7.8,
+    "posterHue": 15,
+    "sources": [
+      "TMDB",
+      "OMDb",
+      "Wikidata",
+      "user-index"
+    ],
+    "alternateTitle": "The Breakfast Club",
+    "keywords": [
+      "high-school",
+      "detention",
+      "identity",
+      "80s",
+      "drama",
+      "comedy",
+      "funny",
+      "honest",
+      "hopeful"
+    ],
+    "ratingSource": "IMDb snapshot via TMDB/OMDb (curated 2026-09-05)",
+    "provenance": {
+      "origin": "curated-local",
+      "sources": [
+        "TMDB",
+        "OMDb",
+        "Wikidata",
+        "user-index"
+      ],
+      "verified": "2026-09-05",
+      "note": "Legitimate metadata catalogue. No streaming/download. Live enrichment optional via Wikipedia/Wikidata."
+    }
+  },
+  {
+    "id": "mean-girls-2004",
+    "title": "Mean Girls",
+    "year": 2004,
+    "country": "USA",
+    "countries": [
+      "USA"
+    ],
+    "genres": [
+      "Comedy"
+    ],
+    "themes": [
+      "high-school",
+      "cliques",
+      "friendship",
+      "identity"
+    ],
+    "moods": [
+      "funny",
+      "sharp",
+      "light"
+    ],
+    "ageTarget": "12+",
+    "ageMin": 12,
+    "synopsis": "A homeschooled teen infiltrates the Plastics and learns the cost of popularity.",
+    "cast": [
+      "Lindsay Lohan",
+      "Rachel McAdams",
+      "Tina Fey"
+    ],
+    "director": "Mark Waters",
+    "runtimeMin": 97,
+    "rating": 7.1,
+    "posterHue": 330,
+    "sources": [
+      "TMDB",
+      "OMDb",
+      "Wikidata",
+      "user-index"
+    ],
+    "alternateTitle": null,
+    "keywords": [
+      "high-school",
+      "cliques",
+      "friendship",
+      "identity",
+      "comedy",
+      "funny",
+      "sharp",
+      "light"
+    ],
+    "ratingSource": "IMDb snapshot via TMDB/OMDb (curated 2026-09-05)",
+    "provenance": {
+      "origin": "curated-local",
+      "sources": [
+        "TMDB",
+        "OMDb",
+        "Wikidata",
+        "user-index"
+      ],
+      "verified": "2026-09-05",
+      "note": "Legitimate metadata catalogue. No streaming/download. Live enrichment optional via Wikipedia/Wikidata."
+    }
+  },
+  {
+    "id": "cmbyn-2017",
+    "title": "Call Me by Your Name",
+    "year": 2017,
+    "country": "Italy",
+    "countries": [
+      "Italy",
+      "France",
+      "USA"
+    ],
+    "genres": [
+      "Romance",
+      "Drama"
+    ],
+    "themes": [
+      "first-love",
+      "summer",
+      "coming-of-age",
+      "memory"
+    ],
+    "moods": [
+      "tender",
+      "melancholic",
+      "sensual"
+    ],
+    "ageTarget": "16+",
+    "ageMin": 16,
+    "synopsis": "A teen and his father's assistant fall into a sunlit summer romance in Italy.",
+    "cast": [
+      "Timothee Chalamet",
+      "Armie Hammer"
+    ],
+    "director": "Luca Guadagnino",
+    "runtimeMin": 132,
+    "rating": 7.8,
+    "posterHue": 75,
+    "sources": [
+      "TMDB",
+      "OMDb",
+      "Wikidata",
+      "user-index"
+    ],
+    "alternateTitle": "Call Me by Your Name",
+    "keywords": [
+      "first-love",
+      "summer",
+      "coming-of-age",
+      "memory",
+      "romance",
+      "drama",
+      "tender",
+      "melancholic",
+      "sensual"
+    ],
+    "ratingSource": "IMDb snapshot via TMDB/OMDb (curated 2026-09-05)",
+    "provenance": {
+      "origin": "curated-local",
+      "sources": [
+        "TMDB",
+        "OMDb",
+        "Wikidata",
+        "user-index"
+      ],
+      "verified": "2026-09-05",
+      "note": "Legitimate metadata catalogue. No streaming/download. Live enrichment optional via Wikipedia/Wikidata."
+    }
+  },
+  {
+    "id": "social-network-2010",
+    "title": "The Social Network",
+    "alternateTitle": null,
+    "year": 2010,
+    "country": "USA",
+    "countries": [
+      "USA"
+    ],
+    "genres": [
+      "Drama",
+      "Biography"
+    ],
+    "themes": [
+      "startup",
+      "business",
+      "friendship",
+      "betrayal",
+      "ambition"
+    ],
+    "moods": [
+      "tense",
+      "sharp",
+      "driven"
+    ],
+    "keywords": [
+      "startup",
+      "business",
+      "facebook",
+      "harvard",
+      "lawsuit",
+      "friendship",
+      "betrayal",
+      "ambition",
+      "drama",
+      "biography",
+      "tense"
+    ],
+    "ageTarget": "14+",
+    "ageMin": 14,
+    "synopsis": "Harvard student Mark Zuckerberg builds Facebook and faces lawsuits and broken friendships as the startup explodes.",
+    "cast": [
+      "Jesse Eisenberg",
+      "Andrew Garfield",
+      "Justin Timberlake"
+    ],
+    "director": "David Fincher",
+    "runtimeMin": 120,
+    "rating": 7.8,
+    "ratingSource": "IMDb snapshot via TMDB/OMDb (curated 2026-09-05)",
+    "posterHue": 210,
+    "sources": [
+      "TMDB",
+      "OMDb",
+      "Wikidata",
+      "user-index"
+    ],
+    "provenance": {
+      "origin": "curated-local",
+      "sources": [
+        "TMDB",
+        "OMDb",
+        "Wikidata",
+        "user-index"
+      ],
+      "verified": "2026-09-05",
+      "note": "Business/startup discovery coverage. No streaming."
+    }
+  },
+  {
+    "id": "founder-2016",
+    "title": "The Founder",
+    "alternateTitle": null,
+    "year": 2016,
+    "country": "USA",
+    "countries": [
+      "USA"
+    ],
+    "genres": [
+      "Drama",
+      "Biography"
+    ],
+    "themes": [
+      "business",
+      "startup",
+      "franchising",
+      "ambition",
+      "perseverance"
+    ],
+    "moods": [
+      "driven",
+      "tense",
+      "inspiring"
+    ],
+    "keywords": [
+      "business",
+      "startup",
+      "mcdonalds",
+      "franchise",
+      "ambition",
+      "entrepreneur",
+      "drama",
+      "biography"
+    ],
+    "ageTarget": "12+",
+    "ageMin": 12,
+    "synopsis": "Salesman Ray Kroc turns a small burger stand into the McDonald's empire, testing partnership and ambition.",
+    "cast": [
+      "Michael Keaton",
+      "Nick Offerman",
+      "John Carroll Lynch"
+    ],
+    "director": "John Lee Hancock",
+    "runtimeMin": 115,
+    "rating": 7.2,
+    "ratingSource": "IMDb snapshot via TMDB/OMDb (curated 2026-09-05)",
+    "posterHue": 35,
+    "sources": [
+      "TMDB",
+      "OMDb",
+      "Wikidata",
+      "user-index"
+    ],
+    "provenance": {
+      "origin": "curated-local",
+      "sources": [
+        "TMDB",
+        "OMDb",
+        "Wikidata",
+        "user-index"
+      ],
+      "verified": "2026-09-05",
+      "note": "Business/startup discovery coverage."
+    }
+  },
+  {
+    "id": "godfather-1972",
+    "title": "The Godfather",
+    "alternateTitle": null,
+    "year": 1972,
+    "country": "USA",
+    "countries": [
+      "USA"
+    ],
+    "genres": [
+      "Crime",
+      "Drama"
+    ],
+    "themes": [
+      "mafia",
+      "family",
+      "power",
+      "loyalty"
+    ],
+    "moods": [
+      "dark",
+      "intense",
+      "epic"
+    ],
+    "keywords": [
+      "crime",
+      "mafia",
+      "family",
+      "power",
+      "loyalty",
+      "gangster",
+      "drama"
+    ],
+    "ageTarget": "16+",
+    "ageMin": 16,
+    "synopsis": "The aging head of a crime family transfers power to his reluctant son.",
+    "cast": [
+      "Marlon Brando",
+      "Al Pacino",
+      "James Caan"
+    ],
+    "director": "Francis Ford Coppola",
+    "runtimeMin": 175,
+    "rating": 9.2,
+    "ratingSource": "IMDb snapshot via TMDB/OMDb (curated 2026-09-05)",
+    "posterHue": 0,
+    "sources": [
+      "TMDB",
+      "OMDb",
+      "Wikidata",
+      "user-index"
+    ],
+    "provenance": {
+      "origin": "curated-local",
+      "sources": [
+        "TMDB",
+        "OMDb",
+        "Wikidata",
+        "user-index"
+      ],
+      "verified": "2026-09-05",
+      "note": "Crime discovery coverage."
+    }
+  },
+  {
+    "id": "city-of-god-2002",
+    "title": "City of God",
+    "alternateTitle": "Cidade de Deus",
+    "year": 2002,
+    "country": "Brazil",
+    "countries": [
+      "Brazil"
+    ],
+    "genres": [
+      "Crime",
+      "Drama"
+    ],
+    "themes": [
+      "poverty",
+      "gangs",
+      "friendship",
+      "coming-of-age",
+      "survival"
+    ],
+    "moods": [
+      "gritty",
+      "intense",
+      "hopeful"
+    ],
+    "keywords": [
+      "crime",
+      "gangs",
+      "favela",
+      "friendship",
+      "coming-of-age",
+      "poverty",
+      "brazil",
+      "drama"
+    ],
+    "ageTarget": "16+",
+    "ageMin": 16,
+    "synopsis": "Two boys grow up in Rio's favelas, one becoming a photographer, the other a drug boss.",
+    "cast": [
+      "Alexandre Rodrigues",
+      "Leandro Firmino",
+      "Phellipe Haagensen"
+    ],
+    "director": "Fernando Meirelles",
+    "runtimeMin": 130,
+    "rating": 8.6,
+    "ratingSource": "IMDb snapshot via TMDB/OMDb (curated 2026-09-05)",
+    "posterHue": 120,
+    "sources": [
+      "TMDB",
+      "OMDb",
+      "Wikidata",
+      "user-index"
+    ],
+    "provenance": {
+      "origin": "curated-local",
+      "sources": [
+        "TMDB",
+        "OMDb",
+        "Wikidata",
+        "user-index"
+      ],
+      "verified": "2026-09-05",
+      "note": "Crime + Brazil coverage."
+    }
+  },
+  {
+    "id": "parasite-2019",
+    "title": "Parasite",
+    "alternateTitle": "Gisaengchung",
+    "year": 2019,
+    "country": "South Korea",
+    "countries": [
+      "South Korea"
+    ],
+    "genres": [
+      "Thriller",
+      "Drama",
+      "Comedy",
+      "Crime"
+    ],
+    "themes": [
+      "class",
+      "family",
+      "con",
+      "inequality"
+    ],
+    "moods": [
+      "tense",
+      "dark",
+      "sharp"
+    ],
+    "keywords": [
+      "crime",
+      "class",
+      "family",
+      "thriller",
+      "inequality",
+      "con",
+      "dark",
+      "business"
+    ],
+    "ageTarget": "15+",
+    "ageMin": 15,
+    "synopsis": "A poor family cons its way into a wealthy household with unexpected consequences.",
+    "cast": [
+      "Song Kang-ho",
+      "Lee Sun-kyun",
+      "Cho Yeo-jeong"
+    ],
+    "director": "Bong Joon Ho",
+    "runtimeMin": 132,
+    "rating": 8.5,
+    "ratingSource": "IMDb snapshot via TMDB/OMDb (curated 2026-09-05)",
+    "posterHue": 90,
+    "sources": [
+      "TMDB",
+      "OMDb",
+      "Wikidata",
+      "user-index"
+    ],
+    "provenance": {
+      "origin": "curated-local",
+      "sources": [
+        "TMDB",
+        "OMDb",
+        "Wikidata",
+        "user-index"
+      ],
+      "verified": "2026-09-05",
+      "note": "Crime + Korea + recent coverage."
+    }
+  },
+  {
+    "id": "dune-2021",
+    "title": "Dune",
+    "alternateTitle": "Dune: Part One",
+    "year": 2021,
+    "country": "USA",
+    "countries": [
+      "USA"
+    ],
+    "genres": [
+      "Sci-Fi",
+      "Adventure",
+      "Drama"
+    ],
+    "themes": [
+      "desert",
+      "prophecy",
+      "family",
+      "survival",
+      "coming-of-age"
+    ],
+    "moods": [
+      "epic",
+      "tense",
+      "mysterious"
+    ],
+    "keywords": [
+      "sci-fi",
+      "desert",
+      "prophecy",
+      "adventure",
+      "family",
+      "recent",
+      "epic"
+    ],
+    "ageTarget": "12+",
+    "ageMin": 12,
+    "synopsis": "Paul Atreides travels to a desert planet to secure his family's future amid war over spice.",
+    "cast": [
+      "Timothee Chalamet",
+      "Rebecca Ferguson",
+      "Oscar Isaac"
+    ],
+    "director": "Denis Villeneuve",
+    "runtimeMin": 155,
+    "rating": 8,
+    "ratingSource": "IMDb snapshot via TMDB/OMDb (curated 2026-09-05)",
+    "posterHue": 25,
+    "sources": [
+      "TMDB",
+      "OMDb",
+      "Wikidata",
+      "user-index"
+    ],
+    "provenance": {
+      "origin": "curated-local",
+      "sources": [
+        "TMDB",
+        "OMDb",
+        "Wikidata",
+        "user-index"
+      ],
+      "verified": "2026-09-05",
+      "note": "Recent-film discovery coverage."
+    }
+  },
+  {
+    "id": "past-lives-2023",
+    "title": "Past Lives",
+    "alternateTitle": null,
+    "year": 2023,
+    "country": "USA",
+    "countries": [
+      "USA",
+      "South Korea"
+    ],
+    "genres": [
+      "Romance",
+      "Drama"
+    ],
+    "themes": [
+      "first-love",
+      "fate",
+      "immigration",
+      "memory",
+      "coming-of-age"
+    ],
+    "moods": [
+      "tender",
+      "melancholic",
+      "quiet"
+    ],
+    "keywords": [
+      "romance",
+      "first-love",
+      "fate",
+      "immigration",
+      "memory",
+      "recent",
+      "tender",
+      "quiet"
+    ],
+    "ageTarget": "12+",
+    "ageMin": 12,
+    "synopsis": "Childhood friends reunite in New York after decades apart and confront fate and love.",
+    "cast": [
+      "Greta Lee",
+      "Teo Yoo",
+      "John Magaro"
+    ],
+    "director": "Celine Song",
+    "runtimeMin": 105,
+    "rating": 7.8,
+    "ratingSource": "IMDb snapshot via TMDB/OMDb (curated 2026-09-05)",
+    "posterHue": 200,
+    "sources": [
+      "TMDB",
+      "OMDb",
+      "Wikidata",
+      "user-index"
+    ],
+    "provenance": {
+      "origin": "curated-local",
+      "sources": [
+        "TMDB",
+        "OMDb",
+        "Wikidata",
+        "user-index"
+      ],
+      "verified": "2026-09-05",
+      "note": "Recent romance discovery coverage."
+    }
+  }
+]

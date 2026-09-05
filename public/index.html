@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Film Search — discovery (V4)</title>
+<style>
+body{font-family:Arial,system-ui;margin:0;background:#0f1115;color:#e8eaf0}
+header{padding:16px 20px;background:#171b23;position:sticky;top:0;z-index:5}
+h1{margin:0;font-size:20px}
+.sub{font-size:12px;opacity:.7;margin-top:4px}
+.bar{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+input,select,button{padding:10px;border-radius:8px;border:1px solid #333;background:#0f1115;color:#eee}
+input{flex:1;min-width:220px}
+button{background:#3b82f6;border-color:#3b82f6;cursor:pointer}
+button.ghost{background:#0f1115;border-color:#444}
+main{padding:16px 20px;max-width:1200px;margin:0 auto}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+.card{background:#171b23;border-radius:12px;overflow:hidden;border:1px solid #262c38;display:flex;flex-direction:column}
+.card img{width:100%;height:220px;object-fit:cover;display:block;background:#222}
+.card .b{padding:10px;display:flex;flex-direction:column;gap:6px;flex:1}
+.meta{font-size:12px;opacity:.85}
+.why{font-size:12px;background:#0f1115;border-radius:8px;padding:8px;margin-top:4px}
+.row{display:flex;gap:8px;margin:10px 0;flex-wrap:wrap}
+#history{font-size:12px;opacity:.9;margin-top:6px}
+#status{font-size:13px;margin:10px 0;padding:10px;border-radius:8px;background:#171b23;border:1px solid #262c38}
+#status.loading{opacity:.7}
+#status.error{border-color:#ef4444;color:#fecaca}
+#status.warn{border-color:#f59e0b;color:#fde68a}
+.badge{display:inline-block;font-size:11px;padding:2px 6px;border-radius:6px;background:#262c38;margin-right:4px}
+.badge.warn{background:#7c2d12}
+.btnrow{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+#modal{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;align-items:center;justify-content:center;padding:16px;z-index:50}
+#modal .box{background:#171b23;border-radius:12px;max-width:640px;width:100%;max-height:90vh;overflow:auto;padding:16px;border:1px solid #333}
+#modal img{width:100%;max-height:280px;object-fit:cover;border-radius:8px}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}
+.chips button{font-size:12px;padding:6px 10px}
+@media (max-width:640px){
+  header{padding:12px}
+  h1{font-size:17px}
+  .card img{height:180px}
+  input{min-width:140px}
+  main{padding:12px}
+}
+</style>
+</head>
+<body>
+<header>
+<h1>Film Search — semantic discovery</h1>
+<div class="sub">Metadata / search / discovery only — no streaming or downloads. Every result shows provenance.</div>
+<div class="bar">
+<input id="q" placeholder='Try: teen drama · startup business · crime · romance · recent films · like Lady Bird · hopeful bittersweet'>
+<button id="go">Search</button>
+<button id="recent" class="ghost" title="Recent films preset">Recent</button>
+</div>
+<div class="chips" id="presets"></div>
+<div class="row">
+<select id="f_genre"><option value="">genre: all</option><option>Drama</option><option>Comedy</option><option>Romance</option><option>Sci-Fi</option><option>Animation</option><option>Fantasy</option><option>Adventure</option><option>Crime</option><option>Thriller</option><option>Biography</option><option>Sport</option><option>Mystery</option><option>Action</option><option>War</option></select>
+<select id="f_country"><option value="">country: all</option><option>USA</option><option>France</option><option>Japan</option><option>India</option><option>Mexico</option><option>Spain</option><option>Italy</option><option>Brazil</option><option>South Korea</option></select>
+<select id="f_age"><option value="">age: all</option><option value="10">10+</option><option value="12">12+</option><option value="13">13+</option><option value="14">14+</option><option value="16">16+</option></select>
+<input id="f_yearFrom" placeholder="year from" style="max-width:100px" inputmode="numeric">
+<input id="f_yearTo" placeholder="year to" style="max-width:100px" inputmode="numeric">
+<button id="clear" class="ghost">Clear</button>
+</div>
+<div id="history"></div>
+</header>
+<main>
+<div id="status" role="status">Ready.</div>
+<div id="count"></div>
+<div class="grid" id="grid"></div>
+</main>
+<div id="modal"><div class="box" id="modalBox"></div></div>
+<script>
+const $=id=>document.getElementById(id);
+const PRESETS=["teen coming-of-age drama","startup business","crime","romance","recent films","like Lady Bird","hopeful bittersweet tender","French coming-of-age romance","Japan animation drama","adventure animation"];
+function esc(s){return String(s??"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;")}
+function setStatus(msg, cls){ const el=$('status'); el.className=cls||""; el.innerHTML=msg; }
+async function run(){
+  const q=$('q').value;
+  const p=new URLSearchParams({q});
+  const g=$('f_genre').value; if(g) p.set('genre',g);
+  const c=$('f_country').value; if(c) p.set('country',c);
+  const a=$('f_age').value; if(a) p.set('ageMax',a);
+  const yf=$('f_yearFrom').value; if(yf) p.set('yearFrom',yf);
+  const yt=$('f_yearTo').value; if(yt) p.set('yearTo',yt);
+  setStatus("Loading…","loading");
+  $('grid').innerHTML="";
+  try{
+    const r=await fetch('/api/search?'+p.toString()).then(r=>{ if(!r.ok) throw new Error("HTTP "+r.status); return r.json(); });
+    const d=r.diagnostics||{};
+    $('count').innerHTML=`<p><b>${r.count}</b> candidates for "<b>${esc(r.query||'broad discovery')}</b>"${d.dedupedCount?` <span class=badge>${d.dedupedCount} duplicate(s) collapsed</span>`:""}${d.yearPref?` <span class=badge>year preference: recent</span>`:""}${d.similarAnchor?` <span class=badge>similar to ${esc(d.similarAnchor.title)}</span>`:""}</p>`;
+    if(d.notes && d.notes.length){
+      setStatus((d.unknown?"⚠ Unknown / no match. ":"")+(d.ambiguous?"⚠ Ambiguous title. ":"")+esc(d.notes.join(" · ")), d.unknown?"error":"warn");
+    } else {
+      setStatus(`OK — ${r.count} result(s). Similarity explained per card. Provenance shown.`, "");
+    }
+    if(!r.results || r.results.length===0){
+      $('grid').innerHTML=`<div class=card><div class=b><b>No results</b><div class=meta>Unknown title or filters too narrow. Try: teen drama, crime, romance, startup, recent films, similar to Lady Bird. Clear filters to broaden.</div><div class=btnrow><button onclick="clearAll()">Clear filters</button></div></div></div>`;
+    } else {
+      $('grid').innerHTML=r.results.map(x=>{
+        const alt=x.alternateTitle?`<div class=meta>aka ${esc(x.alternateTitle)}</div>`:"";
+        const miss=x.posterMissing?`<span class="badge warn">poster unavailable</span>`:"";
+        const unc=(x.uncertainty&&x.uncertainty.length)?`<div class=meta>⚠ ${esc(x.uncertainty.join("; "))}</div>`:"";
+        return `<div class=card><img loading=lazy src="${x.poster}" alt="poster ${esc(x.title)}"><div class=b><div><b>${esc(x.title)}</b> (${x.year}) ${miss}</div>${alt}<div class=meta>${esc(x.country)} · ${esc((x.genres||[]).join('/'))} · ${esc(x.ageTarget)} · ★${x.rating} <span title="${esc(x.ratingSource||'')}">(rating: ${esc((x.ratingSource||'unknown').slice(0,40))})</span><br>${esc(x.director)} · ${x.runtimeMin}min<br>Cast: ${esc((x.cast||[]).slice(0,3).join(', '))}</div><div>${esc(x.synopsis)}</div><div class=why><b>Why ranked ${x.score}:</b><br>${(x.reasons||[]).map(e=>'- '+esc(e)).join('<br>')}</div><div class=meta>Sources: ${esc((x.sources||[]).join(', '))}</div>${unc}<div class=btnrow><button onclick='similar("${esc(x.title).replace(/'/g,"")} ")'>Similar</button><button class=ghost onclick='details("${x.id}")'>Details</button><button class=ghost onclick='save("${x.id}")'>Save</button></div></div></div>`;
+      }).join('');
+    }
+    try{
+      const h=await fetch('/api/history').then(r=>r.json());
+      $('history').textContent='History: '+(h.slice(0,8).map(e=>e.q||'(filter)').join(' | ')||'(empty)');
+      localStorage.setItem('film-search-last',JSON.stringify({q,count:r.count,ts:Date.now()}));
+    }catch(e){}
+  }catch(e){
+    setStatus("Error: provider/search failed — "+esc(e.message||e)+". Local catalogue may still work after retry. No streaming involved.","error");
+    $('grid').innerHTML=`<div class=card><div class=b><b>Something went wrong</b><div class=meta>Provider down or network error. Retry, clear filters, or try a broad query like “drama”.</div></div></div>`;
+  }
+}
+async function details(id){
+  const box=$('modalBox');
+  $('modal').style.display='flex';
+  box.innerHTML='Loading details…';
+  try{
+    const f=await fetch('/api/film?id='+encodeURIComponent(id)).then(r=>{ if(!r.ok) throw new Error("HTTP "+r.status); return r.json(); });
+    const liveBtn=`<button onclick='liveCheck("${esc(f.title).replace(/"/g,"")} ")'>Live check (Wikipedia)</button>`;
+    box.innerHTML=`<img src="${f.poster}" alt="poster"><h2>${esc(f.title)} (${f.year})</h2>${f.alternateTitle?`<div class=meta>Alternate title: ${esc(f.alternateTitle)}</div>`:""}<div class=meta>${esc(f.country)} · ${(f.countries||[]).map(esc).join(', ')} · ${esc((f.genres||[]).join('/'))} · ${esc(f.ageTarget)} · ★${f.rating} (${esc(f.ratingSource||'unknown')})<br>Director: ${esc(f.director)} · ${f.runtimeMin} min<br>Cast: ${esc((f.cast||[]).join(', '))}<br>Themes: ${esc((f.themes||[]).join(', '))}<br>Keywords: ${esc((f.keywords||[]).join(', '))}<br>Moods: ${esc((f.moods||[]).join(', '))}</div><p>${esc(f.synopsis)}</p><div class=meta>Provenance: ${esc(JSON.stringify(f.provenance||{}))}<br>Sources: ${esc((f.sources||[]).join(', '))}${f.posterMissing?"<br>⚠ Missing poster — placeholder shown":""}</div><div id=live></div><div class=btnrow><button onclick='similar("${esc(f.title).replace(/'/g,"")} ")'>Similar to this</button>${liveBtn}<button class=ghost onclick='closeModal()'>Close</button></div>`;
+  }catch(e){ box.innerHTML=`Error loading details: ${esc(e.message)}. <button onclick='closeModal()'>Close</button>`; }
+}
+function closeModal(){ $('modal').style.display='none'; }
+async function liveCheck(title){
+  const el=document.getElementById('live');
+  if(el) el.textContent='Live check… (Wikipedia, public metadata)';
+  try{
+    const j=await fetch('/api/live?title='+encodeURIComponent(title)).then(r=>r.json());
+    if(el){
+      if(j.ok) el.innerHTML=`<div class=why><b>Live ✓ ${esc(j.title)}</b><br>${esc((j.extract||'').slice(0,300))}<br><span class=meta>Provenance: <a href="${esc(j.provenance)}" target=_blank rel=noopener>Wikipedia</a>${j.local?` · local match ${esc(j.local.title)} (${j.local.year})`:" · no local match (no fabrication)"}</span></div>`;
+      else el.innerHTML=`<div class=why><b>Live unavailable</b> (${esc(j.provider||'wikipedia')}${j.providerDown?", provider down":""}): ${esc(j.note||j.error||'unknown')}${j.local?` · local still: ${esc(j.local.title)}`:""}</div>`;
+    }
+  }catch(e){ if(el) el.textContent='Live check failed: '+e.message+' — local catalogue still available.'; }
+}
+async function save(id){await fetch('/api/save',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({id})});run();}
+function similar(title){ $('q').value='similar to '+title; run(); }
+function clearAll(){ $('q').value='';$('f_genre').value='';$('f_country').value='';$('f_age').value='';$('f_yearFrom').value='';$('f_yearTo').value='';run(); }
+$('go').onclick=run;
+$('recent').onclick=()=>{ $('q').value='recent films'; $('f_yearFrom').value='2018'; run(); };
+$('q').onkeydown=e=>{if(e.key==='Enter')run()};
+$('clear').onclick=clearAll;
+$('modal').onclick=e=>{ if(e.target.id==='modal') closeModal(); };
+$('presets').innerHTML=PRESETS.map(p=>`<button class=ghost data-q="${esc(p)}">${esc(p)}</button>`).join('');
+document.querySelectorAll('#presets button').forEach(b=>b.onclick=()=>{ $('q').value=b.dataset.q; run(); });
+try{ const last=JSON.parse(localStorage.getItem('film-search-last')||'null'); if(last&&last.q) $('q').value=last.q; }catch(e){}
+run();
+</script>
+</body>
+</html>
