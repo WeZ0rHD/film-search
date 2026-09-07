@@ -39,6 +39,23 @@ ACCEPTANCE = [
 ]
 
 
+class TestFTS(unittest.TestCase):
+    def test_fts_mem_ranks(self):
+        ranks = prov.fts_mem_ranks("startup entrepreneur technology", CATALOG)
+        self.assertTrue(len(ranks) >= 2, f"fts too narrow: {ranks}")
+        ids = set(ranks)
+        self.assertTrue("silicon-valley-2014" in ids or "social-network-2010" in ids)
+        # empty/garbage query => fail-soft
+        self.assertEqual(prov.fts_mem_ranks("", CATALOG), {})
+        self.assertEqual(prov.fts_mem_ranks("zxqw", CATALOG), {})
+
+    def test_fts_stats(self):
+        info = prov.build_fts_stats(CATALOG)
+        self.assertEqual(info["fts"], "sqlite-fts5-memory")
+        self.assertGreaterEqual(info["count"], 60)
+        self.assertGreaterEqual(info["warmup_hits"], 2)
+
+
 class TestSemantic(unittest.TestCase):
     def test_genre_mood_theme(self):
         p = engine.parse_query("startup business entrepreneur tech")

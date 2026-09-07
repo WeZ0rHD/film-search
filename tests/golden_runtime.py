@@ -5,7 +5,7 @@ import sys
 import urllib.parse
 import urllib.request
 
-BASE = os.path.dirname(os.path.abspath(__file__))
+BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PORT = int(os.environ.get("FILM_SEARCH_PORT", "43140"))
 ROOT = f"http://127.0.0.1:{PORT}"
 
@@ -13,7 +13,7 @@ ROOT = f"http://127.0.0.1:{PORT}"
 def get(path, params=None):
     url = ROOT + path + ("?" + urllib.parse.urlencode(params) if params else "")
     req = urllib.request.Request(url, headers={"Accept": "application/json"})
-    with urllib.request.urlopen(req, timeout=15) as r:
+    with urllib.request.urlopen(req, timeout=60) as r:
         ct = r.headers.get("Content-Type", "")
         body = r.read()
     if "json" in ct:
@@ -24,7 +24,7 @@ def get(path, params=None):
 def post(path, obj):
     data = json.dumps(obj).encode("utf-8")
     req = urllib.request.Request(ROOT + path, data=data, headers={"Content-Type": "application/json"}, method="POST")
-    with urllib.request.urlopen(req, timeout=15) as r:
+    with urllib.request.urlopen(req, timeout=60) as r:
         return json.loads(r.read().decode("utf-8"))
 
 

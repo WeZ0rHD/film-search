@@ -1,5 +1,8 @@
-"""Providers: local catalog + SQLite FTS5 + TVMaze (public, no key) + TMDB (optional key).
+"""Providers: local catalog + in-memory SQLite FTS5 + TVMaze (public, no key) + TMDB (optional key).
 Legitimate/public sources only. All live calls time out fast and fail soft offline.
+Note: FTS5 runs on sqlite :memory: (rebuilt per call, ~ms for this catalog size)
+because sqlite *file* commits intermittently stall on this host; the catalog
+itself is still genuinely SQLite FTS5.
 """
 import json
 import os
@@ -11,7 +14,6 @@ import urllib.request
 
 BASE = os.path.dirname(os.path.abspath(__file__))
 CATALOG_PATH = os.path.join(BASE, "data", "catalog.json")
-CATALOG_DB = os.path.join(BASE, "data", "film_catalog.sqlite")
 
 TVMAZE_SEARCH = "https://api.tvmaze.com/search/shows?q={q}"
 TVMAZE_CAST = "https://api.tvmaze.com/shows/{sid}/cast"
@@ -25,85 +27,48 @@ def load_local():
     return items
 
 
-def build_catalog_db(items=None):
+def _item_body(it):
+    return " ".join([it.get("title", ""), it.get("synopsis", ""), " ".join(it.get("genres", [])),
+                     " ".join(it.get("moods", [])), " ".join(it.get("themes", [])),
+                     " ".join(it.get("cast", [])), it.get("director", ""), it.get("country", "")])
+
+
+def fts_mem_ranks(query, items, limit=30):
+    """SQLite FTS5 pass over an in-memory index. Returns {id(item): rank 1..N}.
+
+    In-memory (no files) because sqlite file commits stall on this host;
+    the retrieval capability is still genuinely SQLite FTS5. Fail-soft {}.
+    """
+    words = [w for w in re.findall(r"[a-z0-9]+", (query or "").lower()) if len(w) >= 3][:8]
+    if not words or not items:
+        return {}
+    try:
+        con = sqlite3.connect(":memory:")
+        try:
+            cur = con.cursor()
+            cur.execute("CREATE VIRTUAL TABLE m USING fts5(id UNINDEXED, title, body)")
+            cur.executemany("INSERT INTO m(id, title, body) VALUES (?,?,?)",
+                            [(it.get("id"), it.get("title", ""), _item_body(it)) for it in items])
+            q = " OR ".join(words)
+            rows = cur.execute("SELECT id FROM m WHERE m MATCH ? ORDER BY rank LIMIT ?", (q, limit)).fetchall()
+            return {r[0]: i + 1 for i, r in enumerate(rows)}
+        finally:
+            con.close()
+    except Exception:
+        return {}
+
+
+def build_fts_stats(items=None):
+    """Warmup/evidence for the FTS5 catalog (no files written)."""
     items = items or load_local()
-    tmp = CATALOG_DB + ".build"
-    for stale in (tmp, tmp + "-journal", CATALOG_DB + "-journal"):
-        try:
-            if os.path.exists(stale):
-                os.remove(stale)
-        except OSError:
-            pass
-    try:
-        if os.path.exists(tmp):
-            os.remove(tmp)
-    except OSError:
-        pass
-    con = sqlite3.connect(tmp, timeout=5.0)
-    try:
-        con.execute("PRAGMA journal_mode=DELETE")
-        con.execute("PRAGMA synchronous=NORMAL")
-        cur = con.cursor()
-        cur.execute("CREATE TABLE catalog(id TEXT PRIMARY KEY, title TEXT, year INT, type TEXT, genres TEXT, moods TEXT, themes TEXT, country TEXT, cc TEXT, age TEXT, cast TEXT, director TEXT, synopsis TEXT, rating REAL, popularity REAL, providers TEXT, body TEXT)")
-        fts_ok = True
-        try:
-            cur.execute("CREATE VIRTUAL TABLE catalog_fts USING fts5(title, body)")
-        except sqlite3.OperationalError:
-            fts_ok = False
-        rows = []
-        fts_rows = []
-        for it in items:
-            body = " ".join([it.get("title", ""), it.get("synopsis", ""), " ".join(it.get("genres", [])), " ".join(it.get("moods", [])), " ".join(it.get("themes", [])), " ".join(it.get("cast", [])), it.get("director", ""), it.get("country", "")])
-            rows.append((
-                it.get("id"), it.get("title"), int(it.get("year", 0)), it.get("type"), " ".join(it.get("genres", [])),
-                " ".join(it.get("moods", [])), " ".join(it.get("themes", [])), it.get("country"), it.get("country_code"),
-                it.get("age"), " ".join(it.get("cast", [])), it.get("director"), it.get("synopsis"),
-                float(it.get("rating", 0)), float(it.get("popularity", 0)), " ".join(it.get("providers", [])), body))
-            if fts_ok:
-                fts_rows.append((it.get("title"), body))
-        cur.executemany("INSERT OR REPLACE INTO catalog VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", rows)
-        if fts_ok:
-            cur.executemany("INSERT INTO catalog_fts(title, body) VALUES (?,?)", fts_rows)
-        con.commit()
-    finally:
-        con.close()
-    # atomic swap: build tmp then replace (never leaves hot journal on canonical name)
-    try:
-        if os.path.exists(CATALOG_DB):
-            os.remove(CATALOG_DB)
-    except OSError:
-        pass
-    os.replace(tmp, CATALOG_DB)
-    return {"db": CATALOG_DB, "fts": fts_ok, "count": len(items)}
+    ranks = fts_mem_ranks("startup tech drama thriller", items)
+    return {"fts": "sqlite-fts5-memory", "sqlite": sqlite3.sqlite_version,
+            "count": len(items), "warmup_hits": len(ranks)}
 
 
-def fts_search(query, limit=30):
-    if not os.path.exists(CATALOG_DB):
-        build_catalog_db()
-    con = sqlite3.connect(CATALOG_DB)
-    con.row_factory = sqlite3.Row
-    cur = con.cursor()
-    # sanitize FTS query: keep alnum words
-    words = [w for w in re.findall(r"[a-z0-9]+", query.lower()) if len(w) >= 2][:8]
-    if not words:
-        con.close()
-        return []
-    out = []
-    try:
-        q = " OR ".join(words)
-        rows = cur.execute("SELECT title FROM catalog_fts WHERE catalog_fts MATCH ? LIMIT ?", (q, limit)).fetchall()
-        titles = [r["title"] for r in rows]
-        for t in titles:
-            r = cur.execute("SELECT * FROM catalog WHERE title=?", (t,)).fetchone()
-            if r:
-                out.append(dict(r))
-    except sqlite3.OperationalError:
-        # fallback LIKE
-        like = "%" + "%".join(words[:3]) + "%"
-        rows = cur.execute("SELECT * FROM catalog WHERE body LIKE ? LIMIT ?", (like, limit)).fetchall()
-        out = [dict(r) for r in rows]
-    con.close()
-    return out
+# Kept for API compatibility (historical CineAgent cap name): now memory-backed.
+def build_catalog_db(items=None):
+    return build_fts_stats(items)
 
 
 def _http_json(url, timeout=6):

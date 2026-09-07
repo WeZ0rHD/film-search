@@ -322,7 +322,7 @@ def people_score(it: dict, parsed: dict, tokens: list) -> tuple:
     return score, reasons
 
 
-def passes_for(items: list, parsed: dict, tokens: list):
+def passes_for(items: list, parsed: dict, tokens: list, fts_id_ranks: dict = None):
     scored_a, scored_b, scored_d = [], [], []
     for it in items:
         s, _ = lexical_score(it, tokens)
@@ -340,6 +340,13 @@ def passes_for(items: list, parsed: dict, tokens: list):
     rank_a = {id(it): i + 1 for i, (_, it) in enumerate(scored_a)}
     rank_b = {id(it): i + 1 for i, (_, it) in enumerate(scored_b)}
     rank_d = {id(it): i + 1 for i, (_, it) in enumerate(scored_d)}
+    # pass E: SQLite FTS5 ranks (string ids -> object ids)
+    rank_e = {}
+    if fts_id_ranks:
+        idem = {it.get("id"): id(it) for it in items}
+        for sid, r in fts_id_ranks.items():
+            if sid in idem:
+                rank_e[idem[sid]] = r
     # pass C: similar-title second hop (rank + raw similarity strength)
     rank_c = {}
     sim_c = {}
@@ -385,7 +392,7 @@ def passes_for(items: list, parsed: dict, tokens: list):
                     if id(it) not in rank_c or r < rank_c[id(it)]:
                         rank_c[id(it)] = r
                         sim_c[id(it)] = sim
-    return rank_a, rank_b, rank_c, rank_d, base_ids, sim_c
+    return rank_a, rank_b, rank_c, rank_d, base_ids, sim_c, rank_e
 
 
 def rrf_fuse(items: list, ranks_list: list) -> dict:
@@ -533,8 +540,14 @@ def search(items: list, query: str, filters: dict = None, exposure: dict = None,
     pool = apply_hard_filters(items, parsed, filters)
     if not pool:
         return []
-    rank_a, rank_b, rank_c, rank_d, base_ids, sim_c = passes_for(pool, parsed, lex_tokens)
-    fused = rrf_fuse(pool, [rank_a, rank_b, rank_c, rank_d])
+    # pass E input: SQLite FTS5 ranks (in-memory, fail-soft)
+    try:
+        from providers import fts_mem_ranks as _fts_mem
+        fts_id_ranks = _fts_mem(query, pool)
+    except Exception:
+        fts_id_ranks = {}
+    rank_a, rank_b, rank_c, rank_d, base_ids, sim_c, rank_e = passes_for(pool, parsed, lex_tokens, fts_id_ranks)
+    fused = rrf_fuse(pool, [rank_a, rank_b, rank_c, rank_d, rank_e])
     candidates = []
     by_id = {id(it): it for it in pool}
     for key, fscore in fused.items():
@@ -556,6 +569,8 @@ def search(items: list, query: str, filters: dict = None, exposure: dict = None,
         reasons += r_sem + r_lex + r_ppl
         if fscore > 0:
             reasons.append(f"multi-pass RRF {fscore:.3f}")
+        if key in rank_e:
+            reasons.append(f"fts5 rank {rank_e[key]}")
         if quality > 0.2:
             reasons.append(f"quality rating {rating} pop {pop:.0f}")
         if id(it) in base_ids:

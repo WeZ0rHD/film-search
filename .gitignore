@@ -1,11 +1,16 @@
 __pycache__/
 data/film_app.sqlite*
 data/film_catalog.sqlite*
+data/catalog.db*
 data/*.quar
 data/t.db*
 data/acceptance.json
 data/build.json
 data/golden.json
+data/exposure.json
+data/favorites.json
+data/feedback.json
+data/history.jsonl
 data/*.log
 data/*.err
 data/*.build
