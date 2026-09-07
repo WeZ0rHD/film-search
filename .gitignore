@@ -1,0 +1,11 @@
+__pycache__/
+data/film_app.sqlite*
+data/film_catalog.sqlite*
+data/*.quar
+data/t.db*
+data/acceptance.json
+data/build.json
+data/golden.json
+data/*.log
+data/*.err
+data/*.build

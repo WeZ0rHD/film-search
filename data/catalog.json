@@ -1,0 +1,2468 @@
+[
+ {
+  "age": "16+",
+  "cast": [
+   "Zendaya",
+   "Hunter Schafer",
+   "Jacob Elordi"
+  ],
+  "country": "USA",
+  "country_code": "US",
+  "director": "Sam Levinson",
+  "genres": [
+   "Drama",
+   "Coming-of-age"
+  ],
+  "id": "euphoria-2019",
+  "language": "en",
+  "moods": [
+   "dark",
+   "tense",
+   "gritty"
+  ],
+  "popularity": 92,
+  "providers": [
+   "Max",
+   "Prime Video"
+  ],
+  "rating": 8.3,
+  "runtime_min": 55,
+  "synopsis": "Teenagers navigate love, addiction, identity and social pressure in a raw contemporary high-school drama.",
+  "themes": [
+   "youth",
+   "teen",
+   "school",
+   "identity",
+   "friendship",
+   "city"
+  ],
+  "title": "Euphoria",
+  "tmdb_id": 85552,
+  "type": "series",
+  "year": 2019
+ },
+ {
+  "age": "16+",
+  "cast": [
+   "Asa Butterfield",
+   "Gillian Anderson",
+   "Ncuti Gatwa"
+  ],
+  "country": "UK",
+  "country_code": "GB",
+  "director": "Ben Taylor",
+  "genres": [
+   "Comedy",
+   "Drama",
+   "Coming-of-age"
+  ],
+  "id": "sex-education-2019",
+  "language": "en",
+  "moods": [
+   "uplifting",
+   "hopeful"
+  ],
+  "popularity": 88,
+  "providers": [
+   "Netflix"
+  ],
+  "rating": 8.3,
+  "runtime_min": 50,
+  "synopsis": "An awkward teen runs a secret sex-therapy clinic at school while figuring out his own relationships.",
+  "themes": [
+   "youth",
+   "teen",
+   "school",
+   "friendship",
+   "love",
+   "identity"
+  ],
+  "title": "Sex Education",
+  "tmdb_id": 81356,
+  "type": "series",
+  "year": 2019
+ },
+ {
+  "age": "12+",
+  "cast": [
+   "Saoirse Ronan",
+   "Laurie Metcalf",
+   "Timothee Chalamet"
+  ],
+  "country": "USA",
+  "country_code": "US",
+  "director": "Greta Gerwig",
+  "genres": [
+   "Drama",
+   "Comedy",
+   "Coming-of-age"
+  ],
+  "id": "lady-bird-2017",
+  "language": "en",
+  "moods": [
+   "nostalgic",
+   "hopeful"
+  ],
+  "popularity": 72,
+  "providers": [
+   "Netflix",
+   "Prime Video"
+  ],
+  "rating": 7.4,
+  "runtime_min": 94,
+  "synopsis": "A strong-willed Sacramento teen clashes with her mother while dreaming of an East Coast college life.",
+  "themes": [
+   "youth",
+   "teen",
+   "coming-of-age",
+   "family",
+   "school",
+   "identity"
+  ],
+  "title": "Lady Bird",
+  "tmdb_id": 391713,
+  "type": "movie",
+  "year": 2017
+ },
+ {
+  "age": "12+",
+  "cast": [
+   "Logan Lerman",
+   "Emma Watson",
+   "Ezra Miller"
+  ],
+  "country": "USA",
+  "country_code": "US",
+  "director": "Stephen Chbosky",
+  "genres": [
+   "Drama",
+   "Coming-of-age"
+  ],
+  "id": "perks-wallflower-2012",
+  "language": "en",
+  "moods": [
+   "melancholic",
+   "hopeful",
+   "nostalgic"
+  ],
+  "popularity": 75,
+  "providers": [
+   "Netflix"
+  ],
+  "rating": 7.9,
+  "runtime_min": 103,
+  "synopsis": "An introverted freshman finds friendship and first love while coping with past trauma.",
+  "themes": [
+   "youth",
+   "teen",
+   "school",
+   "friendship",
+   "love",
+   "coming-of-age"
+  ],
+  "title": "The Perks of Being a Wallflower",
+  "tmdb_id": 8479,
+  "type": "movie",
+  "year": 2012
+ },
+ {
+  "age": "12+",
+  "cast": [
+   "Lisa Teige",
+   "Josefine Frida Pettersen",
+   "Tarjei Sandvik Moe"
+  ],
+  "country": "Norway",
+  "country_code": "NO",
+  "director": "Julie Andem",
+  "genres": [
+   "Drama",
+   "Coming-of-age"
+  ],
+  "id": "skam-2015",
+  "language": "no",
+  "moods": [
+   "reflective",
+   "hopeful"
+  ],
+  "popularity": 58,
+  "providers": [
+   "Netflix"
+  ],
+  "rating": 8.2,
+  "runtime_min": 30,
+  "synopsis": "Oslo teens share love, friendship and identity crises season by season, told in real time.",
+  "themes": [
+   "youth",
+   "teen",
+   "school",
+   "friendship",
+   "identity",
+   "love"
+  ],
+  "title": "Skam",
+  "tmdb_id": 64882,
+  "type": "series",
+  "year": 2015
+ },
+ {
+  "age": "12+",
+  "cast": [
+   "Elsie Fisher",
+   "Josh Hamilton"
+  ],
+  "country": "USA",
+  "country_code": "US",
+  "director": "Bo Burnham",
+  "genres": [
+   "Drama",
+   "Comedy",
+   "Coming-of-age"
+  ],
+  "id": "eighth-grade-2018",
+  "language": "en",
+  "moods": [
+   "anxious",
+   "hopeful",
+   "reflective"
+  ],
+  "popularity": 42,
+  "providers": [
+   "Prime Video"
+  ],
+  "rating": 7.4,
+  "runtime_min": 94,
+  "synopsis": "A shy 13-year-old survives the last week of middle school while making confidence videos online.",
+  "themes": [
+   "youth",
+   "teen",
+   "school",
+   "identity",
+   "underdog",
+   "hidden-gem"
+  ],
+  "title": "Eighth Grade",
+  "tmdb_id": 489439,
+  "type": "movie",
+  "year": 2018
+ },
+ {
+  "age": "10+",
+  "cast": [
+   "Sunny Suljic",
+   "Lucas Hedges",
+   "Katherine Waterston"
+  ],
+  "country": "USA",
+  "country_code": "US",
+  "director": "Jonah Hill",
+  "genres": [
+   "Drama",
+   "Coming-of-age"
+  ],
+  "id": "mid90s-2018",
+  "language": "en",
+  "moods": [
+   "nostalgic",
+   "gritty"
+  ],
+  "popularity": 38,
+  "providers": [
+   "Netflix"
+  ],
+  "rating": 7.4,
+  "runtime_min": 85,
+  "synopsis": "A 13-year-old in 90s Los Angeles finds belonging with a group of older skateboarders.",
+  "themes": [
+   "youth",
+   "teen",
+   "friendship",
+   "coming-of-age",
+   "city",
+   "hidden-gem"
+  ],
+  "title": "Mid90s",
+  "tmdb_id": 500725,
+  "type": "movie",
+  "year": 2018
+ },
+ {
+  "age": "12+",
+  "cast": [
+   "Thomasin McKenzie",
+   "Ben Foster",
+   "Jeff Bridges"
+  ],
+  "country": "New Zealand",
+  "country_code": "NZ",
+  "director": "Taika Waititi",
+  "genres": [
+   "Comedy",
+   "Drama",
+   "Coming-of-age"
+  ],
+  "id": "hunt-wilderpeople-2016",
+  "language": "en",
+  "moods": [
+   "uplifting",
+   "hopeful"
+  ],
+  "popularity": 40,
+  "providers": [
+   "Prime Video"
+  ],
+  "rating": 7.8,
+  "runtime_min": 101,
+  "synopsis": "A rebellious kid and his gruff foster uncle go on the run in the New Zealand bush.",
+  "themes": [
+   "youth",
+   "family",
+   "friendship",
+   "underdog",
+   "hidden-gem"
+  ],
+  "title": "Hunt for the Wilderpeople",
+  "tmdb_id": 293660,
+  "type": "movie",
+  "year": 2016
+ },
+ {
+  "age": "12+",
+  "cast": [
+   "Jesse Eisenberg",
+   "Andrew Garfield",
+   "Justin Timberlake"
+  ],
+  "country": "USA",
+  "country_code": "US",
+  "director": "David Fincher",
+  "genres": [
+   "Drama",
+   "Biography",
+   "Business"
+  ],
+  "id": "social-network-2010",
+  "language": "en",
+  "moods": [
+   "tense",
+   "gritty"
+  ],
+  "popularity": 80,
+  "providers": [
+   "Netflix",
+   "Prime Video"
+  ],
+  "rating": 7.8,
+  "runtime_min": 120,
+  "synopsis": "Harvard student Mark Zuckerberg builds Facebook and faces lawsuits over friendship and betrayal.",
+  "themes": [
+   "startup",
+   "entrepreneurship",
+   "technology",
+   "ambition",
+   "money",
+   "friendship"
+  ],
+  "title": "The Social Network",
+  "tmdb_id": 37799,
+  "type": "movie",
+  "year": 2010
+ },
+ {
+  "age": "12+",
+  "cast": [
+   "Thomas Middleditch",
+   "T.J. Miller",
+   "Kumail Nanjiani"
+  ],
+  "country": "USA",
+  "country_code": "US",
+  "director": "Mike Judge",
+  "genres": [
+   "Comedy",
+   "Business"
+  ],
+  "id": "silicon-valley-2014",
+  "language": "en",
+  "moods": [
+   "uplifting",
+   "tense"
+  ],
+  "popularity": 78,
+  "providers": [
+   "Max"
+  ],
+  "rating": 8.5,
+  "runtime_min": 30,
+  "synopsis": "A shy programmer and his friends try to build a startup inside Silicon Valley absurdity.",
+  "themes": [
+   "startup",
+   "entrepreneurship",
+   "technology",
+   "work",
+   "ambition",
+   "city"
+  ],
+  "title": "Silicon Valley",
+  "tmdb_id": 60574,
+  "type": "series",
+  "year": 2014
+ },
+ {
+  "age": "16+",
+  "cast": [
+   "Lee Pace",
+   "Scoot McNairy",
+   "Mackenzie Davis"
+  ],
+  "country": "USA",
+  "country_code": "US",
+  "director": "Chris Cantwell",
+  "genres": [
+   "Drama",
+   "Business"
+  ],
+  "id": "halt-catch-fire-2014",
+  "language": "en",
+  "moods": [
+   "reflective",
+   "tense",
+   "nostalgic"
+  ],
+  "popularity": 45,
+  "providers": [
+   "Prime Video"
+  ],
+  "rating": 8.4,
+  "runtime_min": 45,
+  "synopsis": "Engineers and visionaries race through the 80s personal-computer revolution and early internet.",
+  "themes": [
+   "startup",
+   "entrepreneurship",
+   "technology",
+   "ambition",
+   "work",
+   "hidden-gem"
+  ],
+  "title": "Halt and Catch Fire",
+  "tmdb_id": 60573,
+  "type": "series",
+  "year": 2014
+ },
+ {
+  "age": "12+",
+  "cast": [
+   "Christian Bale",
+   "Steve Carell",
+   "Ryan Gosling"
+  ],
+  "country": "USA",
+  "country_code": "US",
+  "director": "Adam McKay",
+  "genres": [
+   "Drama",
+   "Biography",
+   "Business"
+  ],
+  "id": "big-short-2015",
+  "language": "en",
+  "moods": [
+   "tense",
+   "gritty"
+  ],
+  "popularity": 74,
+  "providers": [
+   "Netflix"
+  ],
+  "rating": 7.8,
+  "runtime_min": 130,
+  "synopsis": "Outsiders bet against the housing market before the 2008 financial crisis.",
+  "themes": [
+   "money",
+   "business",
+   "ambition",
+   "work",
+   "city"
+  ],
+  "title": "The Big Short",
+  "tmdb_id": 318846,
+  "type": "movie",
+  "year": 2015
+ },
+ {
+  "age": "Tous publics",
+  "cast": [
+   "Brad Pitt",
+   "Jonah Hill",
+   "Philip Seymour Hoffman"
+  ],
+  "country": "USA",
+  "country_code": "US",
+  "director": "Bennett Miller",
+  "genres": [
+   "Drama",
+   "Biography",
+   "Business"
+  ],
+  "id": "moneyball-2011",
+  "language": "en",
+  "moods": [
+   "hopeful",
+   "reflective"
+  ],
+  "popularity": 68,
+  "providers": [
+   "Netflix"
+  ],
+  "rating": 7.6,
+  "runtime_min": 133,
+  "synopsis": "A baseball manager uses statistics to build a winning team on a tiny budget.",
+  "themes": [
+   "business",
+   "ambition",
+   "work",
+   "underdog",
+   "money"
+  ],
+  "title": "Moneyball",
+  "tmdb_id": 60308,
+  "type": "movie",
+  "year": 2011
+ },
+ {
+  "age": "16+",
+  "cast": [
+   "Adam Scott",
+   "Britt Lower",
+   "Zach Cherry"
+  ],
+  "country": "USA",
+  "country_code": "US",
+  "director": "Ben Stiller",
+  "genres": [
+   "Thriller",
+   "Sci-Fi",
+   "Business"
+  ],
+  "id": "severance-2022",
+  "language": "en",
+  "moods": [
+   "tense",
+   "dark",
+   "dreamy"
+  ],
+  "popularity": 85,
+  "providers": [
+   "Apple TV+"
+  ],
+  "rating": 8.7,
+  "runtime_min": 50,
+  "synopsis": "Office workers surgically split work and home memories, then uncover a corporate mystery.",
+  "themes": [
+   "work",
+   "technology",
+   "mystery",
+   "identity",
+   "memory",
+   "city"
+  ],
+  "title": "Severance",
+  "tmdb_id": 95396,
+  "type": "series",
+  "year": 2022
+ },
+ {
+  "age": "16+",
+  "cast": [
+   "Jared Leto",
+   "Anne Hathaway"
+  ],
+  "country": "USA",
+  "country_code": "US",
+  "director": "John Requa",
+  "genres": [
+   "Drama",
+   "Business",
+   "Biography"
+  ],
+  "id": "wecrashed-2022",
+  "language": "en",
+  "moods": [
+   "tense",
+   "gritty"
+  ],
+  "popularity": 52,
+  "providers": [
+   "Apple TV+"
+  ],
+  "rating": 7.3,
+  "runtime_min": 60,
+  "synopsis": "The rise and fall of WeWork and the couple whose ambition inflated a startup bubble.",
+  "themes": [
+   "startup",
+   "entrepreneurship",
+   "ambition",
+   "money",
+   "work"
+  ],
+  "title": "WeCrashed",
+  "tmdb_id": 155537,
+  "type": "series",
+  "year": 2022
+ },
+ {
+  "age": "16+",
+  "cast": [
+   "Bryan Cranston",
+   "Aaron Paul",
+   "Anna Gunn"
+  ],
+  "country": "USA",
+  "country_code": "US",
+  "director": "Vince Gilligan",
+  "genres": [
+   "Crime",
+   "Drama",
+   "Thriller"
+  ],
+  "id": "breaking-bad-2008",
+  "language": "en",
+  "moods": [
+   "tense",
+   "dark",
+   "gritty"
+  ],
+  "popularity": 98,
+  "providers": [
+   "Netflix"
+  ],
+  "rating": 9.5,
+  "runtime_min": 49,
+  "synopsis": "A chemistry teacher turns meth kingpin and drags his family into the criminal underworld.",
+  "themes": [
+   "crime",
+   "investigation",
+   "family",
+   "money",
+   "ambition",
+   "city"
+  ],
+  "title": "Breaking Bad",
+  "tmdb_id": 1396,
+  "type": "series",
+  "year": 2008
+ },
+ {
+  "age": "16+",
+  "cast": [
+   "Song Kang-ho",
+   "Lee Sun-kyun",
+   "Cho Yeo-jeong"
+  ],
+  "country": "South Korea",
+  "country_code": "KR",
+  "director": "Bong Joon Ho",
+  "genres": [
+   "Thriller",
+   "Drama",
+   "Crime"
+  ],
+  "id": "parasite-2019",
+  "language": "ko",
+  "moods": [
+   "tense",
+   "dark"
+  ],
+  "popularity": 90,
+  "providers": [
+   "Netflix",
+   "Prime Video"
+  ],
+  "rating": 8.5,
+  "runtime_min": 132,
+  "synopsis": "A poor family cons its way into a rich household with escalating consequences.",
+  "themes": [
+   "crime",
+   "money",
+   "family",
+   "city",
+   "ambition"
+  ],
+  "title": "Parasite",
+  "tmdb_id": 496243,
+  "type": "movie",
+  "year": 2019
+ },
+ {
+  "age": "18+",
+  "cast": [
+   "Matthew McConaughey",
+   "Woody Harrelson",
+   "Jodie Foster"
+  ],
+  "country": "USA",
+  "country_code": "US",
+  "director": "Cary Fukunaga",
+  "genres": [
+   "Crime",
+   "Mystery",
+   "Thriller"
+  ],
+  "id": "true-detective-2014",
+  "language": "en",
+  "moods": [
+   "dark",
+   "slow",
+   "gritty"
+  ],
+  "popularity": 82,
+  "providers": [
+   "Max"
+  ],
+  "rating": 8.9,
+  "runtime_min": 60,
+  "synopsis": "Two detectives hunt ritualistic killers across decades in Louisiana and beyond.",
+  "themes": [
+   "crime",
+   "investigation",
+   "mystery",
+   "small-town",
+   "time"
+  ],
+  "title": "True Detective",
+  "tmdb_id": 46648,
+  "type": "series",
+  "year": 2014
+ },
+ {
+  "age": "18+",
+  "cast": [
+   "Morgan Freeman",
+   "Brad Pitt",
+   "Kevin Spacey"
+  ],
+  "country": "USA",
+  "country_code": "US",
+  "director": "David Fincher",
+  "genres": [
+   "Crime",
+   "Thriller",
+   "Mystery"
+  ],
+  "id": "se7en-1995",
+  "language": "en",
+  "moods": [
+   "dark",
+   "tense",
+   "gritty"
+  ],
+  "popularity": 84,
+  "providers": [
+   "Netflix"
+  ],
+  "rating": 8.6,
+  "runtime_min": 127,
+  "synopsis": "Two detectives track a killer who stages murders around the seven deadly sins.",
+  "themes": [
+   "crime",
+   "investigation",
+   "city",
+   "mystery"
+  ],
+  "title": "Se7en",
+  "tmdb_id": 807,
+  "type": "movie",
+  "year": 1995
+ },
+ {
+  "age": "16+",
+  "cast": [
+   "Marlon Brando",
+   "Al Pacino",
+   "James Caan"
+  ],
+  "country": "USA",
+  "country_code": "US",
+  "director": "Francis Ford Coppola",
+  "genres": [
+   "Crime",
+   "Drama"
+  ],
+  "id": "godfather-1972",
+  "language": "en",
+  "moods": [
+   "slow",
+   "dark",
+   "reflective"
+  ],
+  "popularity": 88,
+  "providers": [
+   "Paramount+"
+  ],
+  "rating": 9.2,
+  "runtime_min": 175,
+  "synopsis": "The aging head of a mafia dynasty transfers power to his reluctant son.",
+  "themes": [
+   "crime",
+   "family",
+   "ambition",
+   "money"
+  ],
+  "title": "The Godfather",
+  "tmdb_id": 238,
+  "type": "movie",
+  "year": 1972
+ },
+ {
+  "age": "16+",
+  "cast": [
+   "Ursula Corbero",
+   "Alvaro Morte",
+   "Pedro Alonso"
+  ],
+  "country": "Spain",
+  "country_code": "ES",
+  "director": "Alex Pina",
+  "genres": [
+   "Crime",
+   "Thriller",
+   "Mystery"
+  ],
+  "id": "money-heist-2017",
+  "language": "es",
+  "moods": [
+   "tense",
+   "uplifting"
+  ],
+  "popularity": 86,
+  "providers": [
+   "Netflix"
+  ],
+  "rating": 8.2,
+  "runtime_min": 50,
+  "synopsis": "A criminal mastermind recruits thieves for ambitious heists on the Royal Mint and the bank.",
+  "themes": [
+   "crime",
+   "heist",
+   "money",
+   "friendship",
+   "city"
+  ],
+  "title": "Money Heist",
+  "tmdb_id": 71446,
+  "type": "series",
+  "year": 2017
+ },
+ {
+  "age": "16+",
+  "cast": [
+   "David Tennant",
+   "Olivia Colman",
+   "Jodie Whittaker"
+  ],
+  "country": "UK",
+  "country_code": "GB",
+  "director": "James Strong",
+  "genres": [
+   "Crime",
+   "Drama",
+   "Mystery"
+  ],
+  "id": "broadchurch-2013",
+  "language": "en",
+  "moods": [
+   "slow",
+   "melancholic",
+   "tense"
+  ],
+  "popularity": 60,
+  "providers": [
+   "Prime Video"
+  ],
+  "rating": 8.4,
+  "runtime_min": 48,
+  "synopsis": "A small coastal town fractures after a boy is murdered on the cliffs.",
+  "themes": [
+   "crime",
+   "investigation",
+   "small-town",
+   "family",
+   "mystery"
+  ],
+  "title": "Broadchurch",
+  "tmdb_id": 46888,
+  "type": "series",
+  "year": 2013
+ },
+ {
+  "age": "16+",
+  "cast": [
+   "Louis Hofmann",
+   "Lisa Vicari",
+   "Maja Schone"
+  ],
+  "country": "Germany",
+  "country_code": "DE",
+  "director": "Baran bo Odar",
+  "genres": [
+   "Sci-Fi",
+   "Crime",
+   "Mystery",
+   "Thriller"
+  ],
+  "id": "dark-2017",
+  "language": "de",
+  "moods": [
+   "dark",
+   "slow",
+   "dreamy"
+  ],
+  "popularity": 80,
+  "providers": [
+   "Netflix"
+  ],
+  "rating": 8.7,
+  "runtime_min": 53,
+  "synopsis": "Missing children expose time-travel secrets across generations in a small German town.",
+  "themes": [
+   "crime",
+   "mystery",
+   "time",
+   "family",
+   "small-town",
+   "memory"
+  ],
+  "title": "Dark",
+  "tmdb_id": 70523,
+  "type": "series",
+  "year": 2017
+ },
+ {
+  "age": "12+",
+  "cast": [
+   "Bill Murray",
+   "Scarlett Johansson"
+  ],
+  "country": "USA",
+  "country_code": "US",
+  "director": "Sofia Coppola",
+  "genres": [
+   "Drama",
+   "Romance"
+  ],
+  "id": "lost-in-translation-2003",
+  "language": "en",
+  "moods": [
+   "melancholic",
+   "slow",
+   "dreamy",
+   "reflective"
+  ],
+  "popularity": 70,
+  "providers": [
+   "Prime Video"
+  ],
+  "rating": 7.7,
+  "runtime_min": 102,
+  "synopsis": "Two lonely Americans form a quiet bond inside a Tokyo hotel.",
+  "themes": [
+   "loneliness",
+   "love",
+   "city",
+   "memory",
+   "identity"
+  ],
+  "title": "Lost in Translation",
+  "tmdb_id": 153,
+  "type": "movie",
+  "year": 2003
+ },
+ {
+  "age": "12+",
+  "cast": [
+   "Joaquin Phoenix",
+   "Scarlett Johansson",
+   "Amy Adams"
+  ],
+  "country": "USA",
+  "country_code": "US",
+  "director": "Spike Jonze",
+  "genres": [
+   "Drama",
+   "Romance",
+   "Sci-Fi"
+  ],
+  "id": "her-2013",
+  "language": "en",
+  "moods": [
+   "melancholic",
+   "dreamy",
+   "reflective"
+  ],
+  "popularity": 72,
+  "providers": [
+   "Netflix"
+  ],
+  "rating": 8.0,
+  "runtime_min": 126,
+  "synopsis": "A lonely letter writer falls in love with an AI operating system voice.",
+  "themes": [
+   "loneliness",
+   "love",
+   "technology",
+   "city",
+   "identity"
+  ],
+  "title": "Her",
+  "tmdb_id": 152601,
+  "type": "movie",
+  "year": 2013
+ },
+ {
+  "age": "16+",
+  "cast": [
+   "Casey Affleck",
+   "Michelle Williams",
+   "Kyle Chandler"
+  ],
+  "country": "USA",
+  "country_code": "US",
+  "director": "Kenneth Lonergan",
+  "genres": [
+   "Drama"
+  ],
+  "id": "manchester-sea-2016",
+  "language": "en",
+  "moods": [
+   "melancholic",
+   "slow",
+   "reflective"
+  ],
+  "popularity": 62,
+  "providers": [
+   "Prime Video"
+  ],
+  "rating": 7.8,
+  "runtime_min": 137,
+  "synopsis": "A janitor returns to his hometown to care for his nephew after a family tragedy.",
+  "themes": [
+   "family",
+   "loneliness",
+   "small-town",
+   "redemption",
+   "memory"
+  ],
+  "title": "Manchester by the Sea",
+  "tmdb_id": 334541,
+  "type": "movie",
+  "year": 2016
+ },
+ {
+  "age": "Tous publics",
+  "cast": [
+   "Koji Yakusho",
+   "Tokio Emoto"
+  ],
+  "country": "Japan",
+  "country_code": "JP",
+  "director": "Wim Wenders",
+  "genres": [
+   "Drama"
+  ],
+  "id": "perfect-days-2023",
+  "language": "ja",
+  "moods": [
+   "melancholic",
+   "slow",
+   "hopeful",
+   "reflective"
+  ],
+  "popularity": 55,
+  "providers": [
+   "MUBI"
+  ],
+  "rating": 7.9,
+  "runtime_min": 125,
+  "synopsis": "A Tokyo toilet cleaner finds quiet poetry in daily routines, books and music.",
+  "themes": [
+   "loneliness",
+   "work",
+   "city",
+   "memory",
+   "music",
+   "hidden-gem"
+  ],
+  "title": "Perfect Days",
+  "tmdb_id": 976893,
+  "type": "movie",
+  "year": 2023
+ },
+ {
+  "age": "12+",
+  "cast": [
+   "Greta Lee",
+   "Teo Yoo",
+   "John Magaro"
+  ],
+  "country": "USA",
+  "country_code": "US",
+  "director": "Celine Song",
+  "genres": [
+   "Drama",
+   "Romance"
+  ],
+  "id": "past-lives-2023",
+  "language": "en",
+  "moods": [
+   "melancholic",
+   "reflective",
+   "slow"
+  ],
+  "popularity": 64,
+  "providers": [
+   "Paramount+"
+  ],
+  "rating": 7.8,
+  "runtime_min": 105,
+  "synopsis": "Childhood sweethearts reunite in New York after decades apart and different lives.",
+  "themes": [
+   "love",
+   "memory",
+   "identity",
+   "city",
+   "time"
+  ],
+  "title": "Past Lives",
+  "tmdb_id": 666277,
+  "type": "movie",
+  "year": 2023
+ },
+ {
+  "age": "12+",
+  "cast": [
+   "Casey Affleck",
+   "Rooney Mara"
+  ],
+  "country": "USA",
+  "country_code": "US",
+  "director": "David Lowery",
+  "genres": [
+   "Drama",
+   "Fantasy",
+   "Romance"
+  ],
+  "id": "ghost-story-2017",
+  "language": "en",
+  "moods": [
+   "melancholic",
+   "slow",
+   "dreamy"
+  ],
+  "popularity": 36,
+  "providers": [
+   "Netflix"
+  ],
+  "rating": 6.8,
+  "runtime_min": 92,
+  "synopsis": "A dead man in a sheet watches time pass over the house he once shared.",
+  "themes": [
+   "love",
+   "time",
+   "memory",
+   "loneliness",
+   "hidden-gem"
+  ],
+  "title": "A Ghost Story",
+  "tmdb_id": 428682,
+  "type": "movie",
+  "year": 2017
+ },
+ {
+  "age": "12+",
+  "cast": [
+   "Hidetoshi Nishijima",
+   "Toko Miura"
+  ],
+  "country": "Japan",
+  "country_code": "JP",
+  "director": "Ryusuke Hamaguchi",
+  "genres": [
+   "Drama"
+  ],
+  "id": "drive-my-car-2021",
+  "language": "ja",
+  "moods": [
+   "melancholic",
+   "slow",
+   "reflective"
+  ],
+  "popularity": 48,
+  "providers": [
+   "MUBI"
+  ],
+  "rating": 7.6,
+  "runtime_min": 179,
+  "synopsis": "A widowed actor directs a multilingual play while confronting grief on the road.",
+  "themes": [
+   "loneliness",
+   "memory",
+   "work",
+   "redemption",
+   "hidden-gem"
+  ],
+  "title": "Drive My Car",
+  "tmdb_id": 758009,
+  "type": "movie",
+  "year": 2021
+ },
+ {
+  "age": "Tous publics",
+  "cast": [
+   "Adam Driver",
+   "Golshifteh Farahani"
+  ],
+  "country": "USA",
+  "country_code": "US",
+  "director": "Jim Jarmusch",
+  "genres": [
+   "Drama",
+   "Comedy"
+  ],
+  "id": "paterson-2016",
+  "language": "en",
+  "moods": [
+   "melancholic",
+   "slow",
+   "hopeful",
+   "reflective"
+  ],
+  "popularity": 32,
+  "providers": [
+   "Prime Video"
+  ],
+  "rating": 7.3,
+  "runtime_min": 118,
+  "synopsis": "A bus driver writes quiet poems between shifts in Paterson, New Jersey.",
+  "themes": [
+   "work",
+   "city",
+   "hidden-gem",
+   "underdog",
+   "music"
+  ],
+  "title": "Paterson",
+  "tmdb_id": 369972,
+  "type": "movie",
+  "year": 2016
+ },
+ {
+  "age": "12+",
+  "cast": [
+   "Peter Dinklage",
+   "Patricia Clarkson",
+   "Bobby Cannavale"
+  ],
+  "country": "USA",
+  "country_code": "US",
+  "director": "Tom McCarthy",
+  "genres": [
+   "Drama",
+   "Comedy"
+  ],
+  "id": "station-agent-2003",
+  "language": "en",
+  "moods": [
+   "melancholic",
+   "hopeful",
+   "slow"
+  ],
+  "popularity": 28,
+  "providers": [
+   "Prime Video"
+  ],
+  "rating": 7.6,
+  "runtime_min": 89,
+  "synopsis": "A man who loves trains inherits a rural depot and slowly befriends two locals.",
+  "themes": [
+   "friendship",
+   "loneliness",
+   "small-town",
+   "hidden-gem",
+   "underdog"
+  ],
+  "title": "The Station Agent",
+  "tmdb_id": 11557,
+  "type": "movie",
+  "year": 2003
+ },
+ {
+  "age": "12+",
+  "cast": [
+   "Emily Baldoni",
+   "Maury Sterling",
+   "Nicholas Brendon"
+  ],
+  "country": "USA",
+  "country_code": "US",
+  "director": "James Ward Byrkit",
+  "genres": [
+   "Sci-Fi",
+   "Thriller",
+   "Mystery"
+  ],
+  "id": "coherence-2013",
+  "language": "en",
+  "moods": [
+   "tense",
+   "dreamy",
+   "dark"
+  ],
+  "popularity": 30,
+  "providers": [
+   "Prime Video"
+  ],
+  "rating": 7.2,
+  "runtime_min": 89,
+  "synopsis": "Friends at a dinner party fracture into parallel realities during a comet night.",
+  "themes": [
+   "mystery",
+   "friendship",
+   "time",
+   "hidden-gem",
+   "underdog"
+  ],
+  "title": "Coherence",
+  "tmdb_id": 158150,
+  "type": "movie",
+  "year": 2013
+ },
+ {
+  "age": "Tous publics",
+  "cast": [
+   "Zack Gottsagen",
+   "Shia LaBeouf",
+   "Dakota Johnson"
+  ],
+  "country": "USA",
+  "country_code": "US",
+  "director": "Tyler Nilson",
+  "genres": [
+   "Drama",
+   "Comedy"
+  ],
+  "id": "peanut-butter-falcon-2019",
+  "language": "en",
+  "moods": [
+   "uplifting",
+   "hopeful"
+  ],
+  "popularity": 44,
+  "providers": [
+   "Prime Video"
+  ],
+  "rating": 7.6,
+  "runtime_min": 97,
+  "synopsis": "A young man with Down syndrome escapes to chase a wrestling dream with an outlaw friend.",
+  "themes": [
+   "friendship",
+   "underdog",
+   "hidden-gem",
+   "redemption"
+  ],
+  "title": "The Peanut Butter Falcon",
+  "tmdb_id": 531428,
+  "type": "movie",
+  "year": 2019
+ },
+ {
+  "age": "16+",
+  "cast": [
+   "Brie Larson",
+   "John Gallagher Jr.",
+   "Kaitlyn Dever"
+  ],
+  "country": "USA",
+  "country_code": "US",
+  "director": "Destin Daniel Cretton",
+  "genres": [
+   "Drama"
+  ],
+  "id": "short-term-12-2013",
+  "language": "en",
+  "moods": [
+   "reflective",
+   "hopeful",
+   "melancholic"
+  ],
+  "popularity": 34,
+  "providers": [
+   "Netflix"
+  ],
+  "rating": 8.0,
+  "runtime_min": 96,
+  "synopsis": "A supervisor at a foster-care facility connects with at-risk teens while hiding her own past.",
+  "themes": [
+   "youth",
+   "teen",
+   "work",
+   "hidden-gem",
+   "underdog",
+   "family"
+  ],
+  "title": "Short Term 12",
+  "tmdb_id": 183759,
+  "type": "movie",
+  "year": 2013
+ },
+ {
+  "age": "12+",
+  "cast": [
+   "Matthew McConaughey",
+   "Anne Hathaway",
+   "Jessica Chastain"
+  ],
+  "country": "USA",
+  "country_code": "US",
+  "director": "Christopher Nolan",
+  "genres": [
+   "Sci-Fi",
+   "Drama"
+  ],
+  "id": "interstellar-2014",
+  "language": "en",
+  "moods": [
+   "tense",
+   "hopeful"
+  ],
+  "popularity": 95,
+  "providers": [
+   "Netflix",
+   "Paramount+"
+  ],
+  "rating": 8.7,
+  "runtime_min": 169,
+  "synopsis": "Explorers cross a wormhole to find a new home for a dying humanity.",
+  "themes": [
+   "time",
+   "family",
+   "memory",
+   "ambition"
+  ],
+  "title": "Interstellar",
+  "tmdb_id": 157336,
+  "type": "movie",
+  "year": 2014
+ },
+ {
+  "age": "12+",
+  "cast": [
+   "Amy Adams",
+   "Jeremy Renner",
+   "Forest Whitaker"
+  ],
+  "country": "USA",
+  "country_code": "US",
+  "director": "Denis Villeneuve",
+  "genres": [
+   "Sci-Fi",
+   "Drama",
+   "Mystery"
+  ],
+  "id": "arrival-2016",
+  "language": "en",
+  "moods": [
+   "slow",
+   "reflective",
+   "melancholic"
+  ],
+  "popularity": 76,
+  "providers": [
+   "Paramount+"
+  ],
+  "rating": 7.9,
+  "runtime_min": 116,
+  "synopsis": "A linguist decodes an alien language that rewrites her sense of time.",
+  "themes": [
+   "time",
+   "memory",
+   "work",
+   "identity"
+  ],
+  "title": "Arrival",
+  "tmdb_id": 329865,
+  "type": "movie",
+  "year": 2016
+ },
+ {
+  "age": "16+",
+  "cast": [
+   "Charlie Brooker ensemble",
+   "Letitia Wright",
+   "Daniel Kaluuya"
+  ],
+  "country": "UK",
+  "country_code": "GB",
+  "director": "Various",
+  "genres": [
+   "Sci-Fi",
+   "Thriller",
+   "Drama"
+  ],
+  "id": "black-mirror-2011",
+  "language": "en",
+  "moods": [
+   "dark",
+   "tense",
+   "reflective"
+  ],
+  "popularity": 87,
+  "providers": [
+   "Netflix"
+  ],
+  "rating": 8.7,
+  "runtime_min": 60,
+  "synopsis": "Anthology stories explore near-future tech with bleak, satirical twists.",
+  "themes": [
+   "technology",
+   "city",
+   "memory",
+   "identity",
+   "mystery"
+  ],
+  "title": "Black Mirror",
+  "tmdb_id": 42009,
+  "type": "series",
+  "year": 2011
+ },
+ {
+  "age": "12+",
+  "cast": [
+   "Millie Bobby Brown",
+   "Finn Wolfhard",
+   "David Harbour"
+  ],
+  "country": "USA",
+  "country_code": "US",
+  "director": "The Duffer Brothers",
+  "genres": [
+   "Sci-Fi",
+   "Thriller",
+   "Coming-of-age"
+  ],
+  "id": "stranger-things-2016",
+  "language": "en",
+  "moods": [
+   "tense",
+   "nostalgic"
+  ],
+  "popularity": 96,
+  "providers": [
+   "Netflix"
+  ],
+  "rating": 8.7,
+  "runtime_min": 51,
+  "synopsis": "Kids hunt a missing friend and a parallel dimension in 80s small-town Indiana.",
+  "themes": [
+   "youth",
+   "teen",
+   "friendship",
+   "small-town",
+   "mystery"
+  ],
+  "title": "Stranger Things",
+  "tmdb_id": 66732,
+  "type": "series",
+  "year": 2016
+ },
+ {
+  "age": "Tous publics",
+  "cast": [
+   "Omar Sy",
+   "Francois Cluzet"
+  ],
+  "country": "France",
+  "country_code": "FR",
+  "director": "Olivier Nakache",
+  "genres": [
+   "Comedy",
+   "Drama"
+  ],
+  "id": "intouchables-2011",
+  "language": "fr",
+  "moods": [
+   "uplifting",
+   "hopeful",
+   "feel-good"
+  ],
+  "popularity": 82,
+  "providers": [
+   "Netflix"
+  ],
+  "rating": 8.5,
+  "runtime_min": 112,
+  "synopsis": "A wealthy quadriplegic hires a lively caregiver from the suburbs; an unlikely friendship grows.",
+  "themes": [
+   "friendship",
+   "family",
+   "city",
+   "underdog",
+   "redemption"
+  ],
+  "title": "Intouchables",
+  "tmdb_id": 77338,
+  "type": "movie",
+  "year": 2011
+ },
+ {
+  "age": "Tous publics",
+  "cast": [
+   "Audrey Tautou",
+   "Mathieu Kassovitz"
+  ],
+  "country": "France",
+  "country_code": "FR",
+  "director": "Jean-Pierre Jeunet",
+  "genres": [
+   "Comedy",
+   "Romance"
+  ],
+  "id": "amelie-2001",
+  "language": "fr",
+  "moods": [
+   "dreamy",
+   "uplifting",
+   "nostalgic"
+  ],
+  "popularity": 78,
+  "providers": [
+   "Prime Video"
+  ],
+  "rating": 8.3,
+  "runtime_min": 122,
+  "synopsis": "A shy Paris waitress secretly improves strangers lives while avoiding her own romance.",
+  "themes": [
+   "love",
+   "city",
+   "loneliness",
+   "hopeful"
+  ],
+  "title": "Amelie",
+  "tmdb_id": 194,
+  "type": "movie",
+  "year": 2001
+ },
+ {
+  "age": "16+",
+  "cast": [
+   "Damien Bonnard",
+   "Alexis Manenti",
+   "Djebril Zonga"
+  ],
+  "country": "France",
+  "country_code": "FR",
+  "director": "Ladj Ly",
+  "genres": [
+   "Drama",
+   "Crime"
+  ],
+  "id": "miserables-2019",
+  "language": "fr",
+  "moods": [
+   "tense",
+   "gritty"
+  ],
+  "popularity": 50,
+  "providers": [
+   "Netflix"
+  ],
+  "rating": 7.6,
+  "runtime_min": 102,
+  "synopsis": "Cops patrol a tense Paris suburb where a drone video ignites a neighborhood revolt.",
+  "themes": [
+   "crime",
+   "city",
+   "investigation",
+   "hidden-gem"
+  ],
+  "title": "Les Miserables",
+  "tmdb_id": 586047,
+  "type": "movie",
+  "year": 2019
+ },
+ {
+  "age": "16+",
+  "cast": [
+   "Sandra Huller",
+   "Swann Arlaud"
+  ],
+  "country": "France",
+  "country_code": "FR",
+  "director": "Justine Triet",
+  "genres": [
+   "Drama",
+   "Thriller",
+   "Mystery"
+  ],
+  "id": "anatomie-chute-2023",
+  "language": "fr",
+  "moods": [
+   "tense",
+   "reflective",
+   "slow"
+  ],
+  "popularity": 68,
+  "providers": [
+   "Prime Video"
+  ],
+  "rating": 7.7,
+  "runtime_min": 151,
+  "synopsis": "A writer is tried for her husband's fall while their blind son becomes the key witness.",
+  "themes": [
+   "family",
+   "investigation",
+   "mystery",
+   "city"
+  ],
+  "title": "Anatomie d'une chute",
+  "tmdb_id": 915935,
+  "type": "movie",
+  "year": 2023
+ },
+ {
+  "age": "12+",
+  "cast": [
+   "Camille Cottin",
+   "Thibault de Montalembert",
+   "Gregory Montel"
+  ],
+  "country": "France",
+  "country_code": "FR",
+  "director": "Fanny Herrero",
+  "genres": [
+   "Comedy",
+   "Drama"
+  ],
+  "id": "dix-pour-cent-2015",
+  "language": "fr",
+  "moods": [
+   "uplifting",
+   "hopeful"
+  ],
+  "popularity": 62,
+  "providers": [
+   "Netflix"
+  ],
+  "rating": 8.3,
+  "runtime_min": 52,
+  "synopsis": "Paris talent agents juggle stars, egos and their own fragile agency.",
+  "themes": [
+   "work",
+   "city",
+   "friendship",
+   "ambition"
+  ],
+  "title": "Dix pour cent",
+  "tmdb_id": 65139,
+  "type": "series",
+  "year": 2015
+ },
+ {
+  "age": "Tous publics",
+  "cast": [
+   "Shameik Moore",
+   "Jake Johnson",
+   "Hailee Steinfeld"
+  ],
+  "country": "USA",
+  "country_code": "US",
+  "director": "Bob Persichetti",
+  "genres": [
+   "Animation",
+   "Action",
+   "Coming-of-age"
+  ],
+  "id": "spiderverse-2018",
+  "language": "en",
+  "moods": [
+   "uplifting",
+   "tense"
+  ],
+  "popularity": 89,
+  "providers": [
+   "Netflix"
+  ],
+  "rating": 8.4,
+  "runtime_min": 117,
+  "synopsis": "Teen Miles Morales meets Spider-heroes from parallel dimensions to save the multiverse.",
+  "themes": [
+   "youth",
+   "teen",
+   "family",
+   "friendship",
+   "city",
+   "identity"
+  ],
+  "title": "Spider-Man: Into the Spider-Verse",
+  "tmdb_id": 324857,
+  "type": "movie",
+  "year": 2018
+ },
+ {
+  "age": "Tous publics",
+  "cast": [
+   "Anthony Gonzalez",
+   "Gael Garcia Bernal",
+   "Benjamin Bratt"
+  ],
+  "country": "USA",
+  "country_code": "US",
+  "director": "Lee Unkrich",
+  "genres": [
+   "Animation",
+   "Family",
+   "Fantasy"
+  ],
+  "id": "coco-2017",
+  "language": "en",
+  "moods": [
+   "uplifting",
+   "hopeful",
+   "nostalgic"
+  ],
+  "popularity": 86,
+  "providers": [
+   "Disney+"
+  ],
+  "rating": 8.4,
+  "runtime_min": 105,
+  "synopsis": "A boy enters the Land of the Dead to unlock his family's music ban.",
+  "themes": [
+   "family",
+   "music",
+   "memory",
+   "love"
+  ],
+  "title": "Coco",
+  "tmdb_id": 354912,
+  "type": "movie",
+  "year": 2017
+ },
+ {
+  "age": "12+",
+  "cast": [
+   "John Cho",
+   "Haley Lu Richardson"
+  ],
+  "country": "USA",
+  "country_code": "US",
+  "director": "Kogonada",
+  "genres": [
+   "Drama"
+  ],
+  "id": "columbus-2017",
+  "language": "en",
+  "moods": [
+   "melancholic",
+   "slow",
+   "reflective"
+  ],
+  "popularity": 26,
+  "providers": [
+   "MUBI"
+  ],
+  "rating": 7.0,
+  "runtime_min": 104,
+  "synopsis": "A man stuck in Columbus, Indiana bonds with a young architecture lover delaying college.",
+  "themes": [
+   "loneliness",
+   "small-town",
+   "hidden-gem",
+   "underdog"
+  ],
+  "title": "Columbus",
+  "tmdb_id": 428613,
+  "type": "movie",
+  "year": 2017
+ },
+ {
+  "age": "12+",
+  "cast": [
+   "Camille Rutherford",
+   "Pablo Pauly"
+  ],
+  "country": "France",
+  "country_code": "FR",
+  "director": "Thomas Cailley",
+  "genres": [
+   "Comedy",
+   "Romance",
+   "Drama"
+  ],
+  "id": "regne-animal-2023",
+  "language": "fr",
+  "moods": [
+   "hopeful",
+   "tense"
+  ],
+  "popularity": 46,
+  "providers": [
+   "Canal+"
+  ],
+  "rating": 7.2,
+  "runtime_min": 128,
+  "synopsis": "In a France where humans mutate into animals, a father searches for his missing wife.",
+  "themes": [
+   "family",
+   "identity",
+   "hidden-gem"
+  ],
+  "title": "Le Regne animal",
+  "tmdb_id": 892571,
+  "type": "movie",
+  "year": 2023
+ },
+ {
+  "age": "16+",
+  "cast": [
+   "Adele Exarchopoulos",
+   "Jeremie Laheurte"
+  ],
+  "country": "France",
+  "country_code": "FR",
+  "director": "Quentin Dupieux",
+  "genres": [
+   "Comedy",
+   "Crime"
+  ],
+  "id": "yannick-2023",
+  "language": "fr",
+  "moods": [
+   "tense",
+   "dark"
+  ],
+  "popularity": 33,
+  "providers": [
+   "Canal+"
+  ],
+  "rating": 6.9,
+  "runtime_min": 67,
+  "synopsis": "A spectator hijacks a boulevard play and forces the actors to perform his own script.",
+  "themes": [
+   "work",
+   "city",
+   "hidden-gem",
+   "underdog"
+  ],
+  "title": "Yannick",
+  "tmdb_id": 1103825,
+  "type": "movie",
+  "year": 2023
+ },
+ {
+  "age": "16+",
+  "cast": [
+   "Mads Mikkelsen",
+   "Thomas Bo Larsen"
+  ],
+  "country": "Denmark",
+  "country_code": "DK",
+  "director": "Thomas Vinterberg",
+  "genres": [
+   "Drama",
+   "Comedy"
+  ],
+  "id": "drunk-2020",
+  "language": "da",
+  "moods": [
+   "uplifting",
+   "melancholic",
+   "reflective"
+  ],
+  "popularity": 60,
+  "providers": [
+   "Netflix"
+  ],
+  "rating": 7.7,
+  "runtime_min": 117,
+  "synopsis": "Four teachers test a theory that a constant low blood-alcohol level improves life.",
+  "themes": [
+   "friendship",
+   "work",
+   "family",
+   "hidden-gem"
+  ],
+  "title": "Drunk",
+  "tmdb_id": 580175,
+  "type": "movie",
+  "year": 2020
+ },
+ {
+  "age": "16+",
+  "cast": [
+   " Zendaya",
+   "Austin Butler"
+  ],
+  "country": "USA",
+  "country_code": "US",
+  "director": "Denis Villeneuve",
+  "genres": [
+   "Sci-Fi",
+   "Action"
+  ],
+  "id": "dune-2-2024",
+  "language": "en",
+  "moods": [
+   "tense",
+   "dreamy"
+  ],
+  "popularity": 93,
+  "providers": [
+   "Max",
+   "Netflix"
+  ],
+  "rating": 8.2,
+  "runtime_min": 166,
+  "synopsis": "Paul Atreides unites with the Fremen to wage war against House Harkonnen.",
+  "themes": [
+   "ambition",
+   "city",
+   "time"
+  ],
+  "title": "Dune: Part Two",
+  "tmdb_id": 693134,
+  "type": "movie",
+  "year": 2024
+ },
+ {
+  "age": "12+",
+  "cast": [
+   "Paul Mescal",
+   "Saoirse Ronan"
+  ],
+  "country": "UK",
+  "country_code": "GB",
+  "director": "Garth Davis",
+  "genres": [
+   "Drama",
+   "Sci-Fi",
+   "Romance"
+  ],
+  "id": "foe-2023",
+  "language": "en",
+  "moods": [
+   "melancholic",
+   "slow",
+   "dreamy"
+  ],
+  "popularity": 24,
+  "providers": [
+   "Prime Video"
+  ],
+  "rating": 6.1,
+  "runtime_min": 110,
+  "synopsis": "A couple on an isolated farm is offered a station life that tests their marriage.",
+  "themes": [
+   "love",
+   "loneliness",
+   "memory",
+   "hidden-gem"
+  ],
+  "title": "Foe",
+  "tmdb_id": 537942,
+  "type": "movie",
+  "year": 2023
+ },
+ {
+  "age": "Tous publics",
+  "cast": [
+   "Iris Apatow ensemble"
+  ],
+  "country": "USA",
+  "country_code": "US",
+  "director": "Judd Apatow",
+  "genres": [
+   "Comedy",
+   "Coming-of-age"
+  ],
+  "id": "love-rosie-note",
+  "language": "en",
+  "moods": [
+   "uplifting",
+   "hopeful"
+  ],
+  "popularity": 55,
+  "providers": [
+   "Netflix"
+  ],
+  "rating": 7.2,
+  "runtime_min": 102,
+  "synopsis": "Childhood best friends circle around love across years and missed timing.",
+  "themes": [
+   "youth",
+   "love",
+   "friendship",
+   "city"
+  ],
+  "title": "Love, Rosie",
+  "tmdb_id": 198375,
+  "type": "movie",
+  "year": 2014
+ },
+ {
+  "age": "10+",
+  "cast": [
+   "Jacob Tremblay",
+   "Julia Roberts",
+   "Owen Wilson"
+  ],
+  "country": "USA",
+  "country_code": "US",
+  "director": "Stephen Chbosky",
+  "genres": [
+   "Drama",
+   "Family",
+   "Coming-of-age"
+  ],
+  "id": "wonder-2017",
+  "language": "en",
+  "moods": [
+   "uplifting",
+   "hopeful"
+  ],
+  "popularity": 66,
+  "providers": [
+   "Netflix"
+  ],
+  "rating": 8.0,
+  "runtime_min": 113,
+  "synopsis": "A boy with facial differences enters mainstream school for the first time.",
+  "themes": [
+   "youth",
+   "school",
+   "family",
+   "friendship",
+   "underdog"
+  ],
+  "title": "Wonder",
+  "tmdb_id": 406997,
+  "type": "movie",
+  "year": 2017
+ },
+ {
+  "age": "12+",
+  "cast": [
+   "Timothee Chalamet",
+   "Rebecca Ferguson"
+  ],
+  "country": "USA",
+  "country_code": "US",
+  "director": "Luca Guadagnino",
+  "genres": [
+   "Drama",
+   "Romance",
+   "Coming-of-age"
+  ],
+  "id": "call-me-by-your-name-2017",
+  "language": "en",
+  "moods": [
+   "melancholic",
+   "dreamy",
+   "nostalgic"
+  ],
+  "popularity": 70,
+  "providers": [
+   "Netflix"
+  ],
+  "rating": 7.8,
+  "runtime_min": 132,
+  "synopsis": "A teen falls for his father's research assistant over one Italian summer.",
+  "themes": [
+   "youth",
+   "teen",
+   "love",
+   "memory",
+   "identity"
+  ],
+  "title": "Call Me by Your Name",
+  "tmdb_id": 398818,
+  "type": "movie",
+  "year": 2017
+ },
+ {
+  "age": "18+",
+  "cast": [
+   "Jon Hamm",
+   "Elisabeth Moss",
+   "Vincent Kartheiser"
+  ],
+  "country": "USA",
+  "country_code": "US",
+  "director": "Matthew Weiner",
+  "genres": [
+   "Drama",
+   "Business"
+  ],
+  "id": "mad-men-2007",
+  "language": "en",
+  "moods": [
+   "slow",
+   "reflective",
+   "gritty"
+  ],
+  "popularity": 74,
+  "providers": [
+   "Prime Video"
+  ],
+  "rating": 8.6,
+  "runtime_min": 47,
+  "synopsis": "Ad men in 60s Madison Avenue sell dreams while their own lives unravel.",
+  "themes": [
+   "work",
+   "ambition",
+   "city",
+   "money",
+   "identity"
+  ],
+  "title": "Mad Men",
+  "tmdb_id": 11010,
+  "type": "series",
+  "year": 2007
+ },
+ {
+  "age": "16+",
+  "cast": [
+   "Joseph Gordon-Levitt",
+   "Zooey Deschanel"
+  ],
+  "country": "USA",
+  "country_code": "US",
+  "director": "Marc Webb",
+  "genres": [
+   "Comedy",
+   "Drama",
+   "Romance"
+  ],
+  "id": "500-days-summer-2009",
+  "language": "en",
+  "moods": [
+   "melancholic",
+   "hopeful",
+   "nostalgic"
+  ],
+  "popularity": 65,
+  "providers": [
+   "Prime Video"
+  ],
+  "rating": 7.7,
+  "runtime_min": 95,
+  "synopsis": "A greeting-card writer replays 500 days of a bittersweet relationship.",
+  "themes": [
+   "love",
+   "memory",
+   "city",
+   "time"
+  ],
+  "title": "500 Days of Summer",
+  "tmdb_id": 19913,
+  "type": "movie",
+  "year": 2009
+ },
+ {
+  "age": "12+",
+  "cast": [
+   "Jesse Plemons",
+   "Kirsten Dunst"
+  ],
+  "country": "USA",
+  "country_code": "US",
+  "director": "Jane Campion",
+  "genres": [
+   "Drama",
+   "Romance"
+  ],
+  "id": "power-dog-2021",
+  "language": "en",
+  "moods": [
+   "slow",
+   "tense",
+   "melancholic"
+  ],
+  "popularity": 52,
+  "providers": [
+   "Netflix"
+  ],
+  "rating": 6.9,
+  "runtime_min": 126,
+  "synopsis": "A domineering rancher torments his brother's new wife and her son.",
+  "themes": [
+   "family",
+   "loneliness",
+   "small-town"
+  ],
+  "title": "The Power of the Dog",
+  "tmdb_id": 600583,
+  "type": "movie",
+  "year": 2021
+ },
+ {
+  "id": "bande-de-filles-2014",
+  "title": "Bande de filles",
+  "year": 2014,
+  "type": "movie",
+  "genres": [
+   "Drama",
+   "Coming-of-age"
+  ],
+  "moods": [
+   "gritty",
+   "hopeful"
+  ],
+  "themes": [
+   "youth",
+   "teen",
+   "friendship",
+   "identity",
+   "city"
+  ],
+  "country": "France",
+  "country_code": "FR",
+  "age": "12+",
+  "cast": [
+   "Karidja Toure",
+   "Assa Sylla"
+  ],
+  "director": "Celine Sciamma",
+  "synopsis": "Marieme rejoint un groupe de filles libres en banlieue parisienne.",
+  "rating": 6.9,
+  "popularity": 30,
+  "runtime_min": 112,
+  "providers": [
+   "MUBI",
+   "Canal+"
+  ],
+  "language": "fr",
+  "sources": [
+   "local"
+  ]
+ },
+ {
+  "id": "combattants-2014",
+  "title": "Les Combattants",
+  "year": 2014,
+  "type": "movie",
+  "genres": [
+   "Comedy",
+   "Drama",
+   "Romance"
+  ],
+  "moods": [
+   "uplifting",
+   "hopeful"
+  ],
+  "themes": [
+   "youth",
+   "love",
+   "friendship",
+   "underdog"
+  ],
+  "country": "France",
+  "country_code": "FR",
+  "age": "12+",
+  "cast": [
+   "Adele Haenel",
+   "Kevin Azais"
+  ],
+  "director": "Thomas Cailley",
+  "synopsis": "Arnaud suit Madeleine dans un stage commando qui tourne a l aventure.",
+  "rating": 6.9,
+  "popularity": 32,
+  "runtime_min": 98,
+  "providers": [
+   "Canal+"
+  ],
+  "language": "fr",
+  "sources": [
+   "local"
+  ]
+ },
+ {
+  "id": "dheepan-2015",
+  "title": "Dheepan",
+  "year": 2015,
+  "type": "movie",
+  "genres": [
+   "Drama",
+   "Crime"
+  ],
+  "moods": [
+   "tense",
+   "gritty",
+   "reflective"
+  ],
+  "themes": [
+   "family",
+   "city",
+   "identity",
+   "redemption"
+  ],
+  "country": "France",
+  "country_code": "FR",
+  "age": "12+",
+  "cast": [
+   "Jesuthasan Antonythasan"
+  ],
+  "director": "Jacques Audiard",
+  "synopsis": "Un ex-soldat reconstitue une famille fictive pour l asile en banlieue.",
+  "rating": 7.0,
+  "popularity": 36,
+  "runtime_min": 115,
+  "providers": [
+   "Netflix"
+  ],
+  "language": "fr",
+  "sources": [
+   "local"
+  ]
+ },
+ {
+  "id": "grave-2016",
+  "title": "Grave",
+  "year": 2016,
+  "type": "movie",
+  "genres": [
+   "Horror",
+   "Drama",
+   "Coming-of-age"
+  ],
+  "moods": [
+   "dark",
+   "tense"
+  ],
+  "themes": [
+   "youth",
+   "teen",
+   "school",
+   "identity"
+  ],
+  "country": "France",
+  "country_code": "FR",
+  "age": "16+",
+  "cast": [
+   "Garance Marillier",
+   "Ella Rumpf"
+  ],
+  "director": "Julia Ducournau",
+  "synopsis": "Justine decouvre un desir de chair lors d un bizutage veto.",
+  "rating": 7.0,
+  "popularity": 45,
+  "runtime_min": 99,
+  "providers": [
+   "Canal+"
+  ],
+  "language": "fr",
+  "sources": [
+   "local"
+  ],
+  "tmdb_id": 395990
+ }
+]
