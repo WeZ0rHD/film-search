@@ -14,9 +14,74 @@ import urllib.request
 
 BASE = os.path.dirname(os.path.abspath(__file__))
 CATALOG_PATH = os.path.join(BASE, "data", "catalog.json")
+LIVE_CACHE_PATH = os.path.join(BASE, "data", "live_cache.json")
+LIVE_CACHE_TTL_S = 7 * 24 * 3600
 
 TVMAZE_SEARCH = "https://api.tvmaze.com/search/shows?q={q}"
 TVMAZE_CAST = "https://api.tvmaze.com/shows/{sid}/cast"
+
+
+def source_url_for(it: dict) -> str:
+    """Legitimate source link for a result. Never invented: TVMaze/TMDB IDs only."""
+    _id = str(it.get("id", ""))
+    if _id.startswith("tvmaze-"):
+        num = _id.split("-", 1)[1]
+        if num.isdigit():
+            return f"https://www.tvmaze.com/shows/{num}"
+        return ""
+    if _id.startswith("tmdb-"):
+        num = _id.split("-", 1)[1]
+        if num.isdigit():
+            kind = "tv" if it.get("type") == "series" else "movie"
+            return f"https://www.themoviedb.org/{kind}/{num}"
+        return ""
+    tmdb_id = it.get("tmdb_id")
+    if tmdb_id:
+        kind = "tv" if it.get("type") == "series" else "movie"
+        return f"https://www.themoviedb.org/{kind}/{tmdb_id}"
+    return ""
+
+
+def load_live_cache(max_age_s: int = LIVE_CACHE_TTL_S) -> dict:
+    """Stable-metadata cache for live enrichment: {query_norm: {ts, items}}."""
+    try:
+        with open(LIVE_CACHE_PATH, encoding="utf-8") as f:
+            data = json.load(f)
+        if not isinstance(data, dict):
+            return {}
+        import time as _t
+        now = _t.time()
+        return {k: v for k, v in data.items()
+                if isinstance(v, dict) and (now - float(v.get("ts", 0))) < max_age_s}
+    except (OSError, ValueError):
+        return {}
+
+
+def save_live_cache(query: str, items: list) -> None:
+    """Persist live results (atomic tmp+replace). Fail-soft, never raises."""
+    import time as _t
+    key = re.sub(r"\s+", " ", (query or "").lower()).strip()[:80]
+    if not key:
+        return
+    try:
+        try:
+            with open(LIVE_CACHE_PATH, encoding="utf-8") as f:
+                data = json.load(f)
+        except (OSError, ValueError):
+            data = {}
+        if not isinstance(data, dict):
+            data = {}
+        data[key] = {"ts": _t.time(), "items": items}
+        # cap cache at 60 queries to bound disk
+        if len(data) > 60:
+            ordered = sorted(data.items(), key=lambda kv: kv[1].get("ts", 0))
+            data = dict(ordered[-60:])
+        tmp = LIVE_CACHE_PATH + ".tmp"
+        with open(tmp, "w", encoding="utf-8") as f:
+            json.dump(data, f, ensure_ascii=False)
+        os.replace(tmp, LIVE_CACHE_PATH)
+    except OSError:
+        pass
 
 
 def load_local():
@@ -24,6 +89,12 @@ def load_local():
         items = json.load(f)
     for it in items:
         it.setdefault("sources", ["local"])
+        # legitimate outbound link when a TMDB id is curated (else "")
+        try:
+            if not it.get("source_url"):
+                it["source_url"] = source_url_for(it)
+        except Exception:
+            it["source_url"] = ""
     return items
 
 
@@ -101,8 +172,9 @@ def tvmaze_search(query, limit=10):
             year = 0
         img = (sh.get("image") or {})
         rating = ((sh.get("rating") or {}).get("average")) or 0
-        out.append({
-            "id": f"tvmaze-{sh.get('id')}",
+        sid = sh.get("id")
+        item = {
+            "id": f"tvmaze-{sid}",
             "title": title,
             "year": year or 2000,
             "type": "series",
@@ -122,7 +194,9 @@ def tvmaze_search(query, limit=10):
             "poster": img.get("original") or img.get("medium") or "",
             "sources": ["tvmaze"],
             "language": sh.get("language") or "en",
-        })
+        }
+        item["source_url"] = source_url_for(item)
+        out.append(item)
     return out
 
 
@@ -146,7 +220,7 @@ def tmdb_search(query, limit=10):
         except ValueError:
             year = 0
         poster = ("https://image.tmdb.org/t/p/w500" + r["poster_path"]) if r.get("poster_path") else ""
-        out.append({
+        item = {
             "id": f"tmdb-{r.get('id')}",
             "title": title,
             "year": year or 2000,
@@ -167,7 +241,9 @@ def tmdb_search(query, limit=10):
             "poster": poster,
             "sources": ["tmdb"],
             "language": r.get("original_language") or "",
-        })
+        }
+        item["source_url"] = source_url_for(item)
+        out.append(item)
     return out
 
 

@@ -199,9 +199,11 @@ def parse_query(q: str) -> dict:
     if m:
         y = next(g for g in m.groups() if g)
         parsed["year_max"] = int(y)
-    if parsed["years"]:
-        if parsed["year_min"] is None and parsed["year_max"] is None and len(parsed["years"]) == 1:
-            parsed["year_min"] = parsed["year_max"] = parsed["years"][0]
+    # Hard vs soft: a bare single year ("2022", "Dune 2024") is a SOFT recency
+    # hint (scored, not filtered). Hard year filtering comes only from explicit
+    # decade ("2010s"), after/before bounds, or UI year_min/year_max filters.
+    # (Previously a single year forced year_min==year_max, which collapsed
+    # "heartwarming teen series 2022" to the only 2x 2022 series in catalog.)
     # age / type
     for canon, variants in AGE_HINTS.items():
         if any(re.search(r"\b" + re.escape(norm(v)) + r"\b", t) for v in variants if norm(v)):

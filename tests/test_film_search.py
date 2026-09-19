@@ -168,5 +168,69 @@ class TestAcceptance(unittest.TestCase):
         self.assertGreaterEqual(len(all_ids), 30, f"breadth too low: {len(all_ids)} unique")
 
 
+class TestSourcesAndCache(unittest.TestCase):
+    def test_source_url_legit_only(self):
+        # local items: source_url "" or real TMDB link, never invented
+        for it in CATALOG:
+            url = prov.source_url_for(it)
+            self.assertTrue(url == "" or url.startswith("https://www.themoviedb.org/"),
+                            f"bad source_url {url} for {it.get('id')}")
+        # tvmaze ids map to real TVMaze URLs
+        self.assertEqual(prov.source_url_for({"id": "tvmaze-123", "type": "series"}),
+                         "https://www.tvmaze.com/shows/123")
+        self.assertEqual(prov.source_url_for({"id": "tmdb-456", "type": "movie"}),
+                         "https://www.themoviedb.org/movie/456")
+
+    def test_live_cache_roundtrip_failsoft(self):
+        # save + load roundtrip (uses real file, cleans its own key)
+        prov.save_live_cache("test-cache-roundtrip-xyz", [{"id": "x", "title": "X"}])
+        data = prov.load_live_cache()
+        self.assertIn("test-cache-roundtrip-xyz", data)
+        # cleanup test key to keep cache tidy
+        try:
+            import json as _j, os as _o
+            p = prov.LIVE_CACHE_PATH
+            with open(p, encoding="utf-8") as _f:
+                d = _j.load(_f)
+            d.pop("test-cache-roundtrip-xyz", None)
+            tmp = p + ".tmp"
+            with open(tmp, "w", encoding="utf-8") as _f:
+                _f.write(_j.dumps(d, ensure_ascii=False))
+            _o.replace(tmp, p)
+        except (OSError, ValueError):
+            pass
+
+    def test_tvmaze_failsoft_never_raises(self):
+        # must return a list even offline (fail-soft), never raise
+        res = prov.tvmaze_search("zxqw-heartstopper-unlikely-xyz", limit=3)
+        self.assertIsInstance(res, list)
+
+    def test_hard_violations_zero_on_gated_queries(self):
+        gated = [
+            ("French drama 2010s", {}, "FR", (2010, 2019)),
+            ("teen drama", {"type": "series"}, None, None),
+            ("drama", {"need_providers": ["Netflix"]}, None, None),
+        ]
+        for q, filters, cc, yrs in gated:
+            res = engine.search(CATALOG, q, filters=filters, exposure={}, top_n=8)
+            self.assertGreaterEqual(len(res), 2, f"too narrow: {q} {filters}")
+            for r in res:
+                if cc:
+                    self.assertEqual(r.get("country_code"), cc, f"{q}: {r}")
+                if yrs:
+                    self.assertTrue(yrs[0] <= r["year"] <= yrs[1], f"{q}: {r}")
+                if filters.get("type"):
+                    self.assertEqual(r.get("type"), filters["type"])
+                if filters.get("need_providers"):
+                    have = set(p.lower() for p in r.get("providers", []))
+                    self.assertTrue(have & {"netflix"})
+
+    def test_no_duplicate_ids_in_results(self):
+        for q in ["youth teen drama", "crime thriller", "sci-fi time travel", "teen drama"]:
+            res = engine.search(CATALOG, q, filters={}, exposure={}, top_n=8)
+            keys = [engine.norm_title_key(r["title"], r["year"]) for r in res]
+            self.assertEqual(len(keys), len(set(keys)), f"duplicates for {q}")
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)

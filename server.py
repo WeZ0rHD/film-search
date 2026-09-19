@@ -17,6 +17,10 @@ PORT = int(os.environ.get("FILM_SEARCH_PORT", "43140"))
 LOCAL = prov.load_local()
 BY_ID = {it["id"]: it for it in LOCAL}
 LIVE_CACHE = {}
+# Stable-metadata disk cache for live enrichment (survives restart, TTL 7d).
+# In-memory LIVE_CACHE stays authoritative for /api/detail in this process;
+# disk cache lets offline/restared runs reuse last good live metadata.
+DISK_CACHE = prov.load_live_cache()
 
 
 def get_exposure():
@@ -45,11 +49,25 @@ def do_search(query, filters, limit=12, use_live=True):
     exposure = get_exposure()
     pool = list(LOCAL)
     live = []
+    live_from = "none"
     if use_live and query and len(query.strip()) >= 2:
-        try:
-            live = prov.live_enrich(query)
-        except Exception:
-            live = []
+        key = re.sub(r"\s+", " ", query.lower()).strip()[:80]
+        cached = DISK_CACHE.get(key)
+        if cached and isinstance(cached, dict) and cached.get("items"):
+            live = cached["items"]
+            live_from = "disk-cache"
+        else:
+            try:
+                live = prov.live_enrich(query)
+            except Exception:
+                live = []
+            live_from = "live" if live else "live-empty"
+            if live:
+                try:
+                    prov.save_live_cache(query, live)
+                    DISK_CACHE[key] = {"ts": time.time(), "items": live}
+                except Exception:
+                    pass
     for it in live:
         LIVE_CACHE[it["id"]] = it
     merged = pool + live
@@ -60,12 +78,19 @@ def do_search(query, filters, limit=12, use_live=True):
         if key not in seen:
             seen[key] = dict(it)
             seen[key]["sources"] = list(it.get("sources", ["local"]))
+            if not seen[key].get("source_url"):
+                try:
+                    seen[key]["source_url"] = prov.source_url_for(it)
+                except Exception:
+                    seen[key]["source_url"] = ""
         else:
             prev = seen[key]
             srcs = set(prev.get("sources", [])) | set(it.get("sources", []))
             prev["sources"] = sorted(srcs)
             if it.get("poster") and not prev.get("poster"):
                 prev["poster"] = it["poster"]
+            if it.get("source_url") and not prev.get("source_url"):
+                prev["source_url"] = it["source_url"]
             if it.get("synopsis") and len(it.get("synopsis", "")) < len(prev.get("synopsis", "")):
                 pass
             elif it.get("synopsis"):
@@ -84,6 +109,13 @@ def do_search(query, filters, limit=12, use_live=True):
                 r["ranking_reason"] = (r.get("ranking_reason", "") + f"; liked taste +{bonus:.1f}").strip("; ")
         results.sort(key=lambda r: -r.get("_score", 0))
     bump_exposure([r.get("id") for r in results[:6] if r.get("id")])
+    # guarantee source_url on every result (legit links only, "" when none)
+    for r in results:
+        if not r.get("source_url"):
+            try:
+                r["source_url"] = prov.source_url_for(r)
+            except Exception:
+                r["source_url"] = ""
     # log history (JSONL, survives restart)
     store.log_search(query, filters, [r.get("id") for r in results])
     return results
@@ -115,7 +147,8 @@ class Handler(BaseHTTPRequestHandler):
         if path == "/api/health":
             return self._send(200, {"ok": True, "local": len(LOCAL), "port": PORT, "tvmaze": "public",
                                     "tmdb": bool(os.environ.get("TMDB_API_KEY")),
-                                    "fts": "sqlite-fts5-memory", "store": "json"})
+                                    "fts": "sqlite-fts5-memory", "store": "json",
+                                    "live_disk_cache": len(DISK_CACHE)})
         if path == "/api/search":
             filters = {}
             if g("genre"): filters["genre"] = g("genre")
@@ -132,7 +165,8 @@ class Handler(BaseHTTPRequestHandler):
             use_live = g("live", "1") != "0"
             results = do_search(g("q", ""), filters, limit=min(limit, 24), use_live=use_live)
             return self._send(200, {"query": g("q", ""), "filters": filters, "count": len(results), "results": results,
-                                    "sources": {"local": len(LOCAL), "live_cached": len(LIVE_CACHE)}})
+                                    "sources": {"local": len(LOCAL), "live_cached": len(LIVE_CACHE),
+                                                "live_disk_cache": len(DISK_CACHE)}})
         if path == "/api/similar":
             title = g("title", "")
             results = do_search(f"similar to {title}", {}, limit=int(g("limit", "12") or 12), use_live=True)
@@ -145,6 +179,11 @@ class Handler(BaseHTTPRequestHandler):
                 return self._send(404, {"error": "not found"})
             d = dict(it)
             d["poster"] = engine.poster_for(d)
+            if not d.get("source_url"):
+                try:
+                    d["source_url"] = prov.source_url_for(d)
+                except Exception:
+                    d["source_url"] = ""
             # second hop neighbors
             neigh = engine.search(list(BY_ID.values()), f"similar to {d.get('title','')}", filters={}, exposure={}, top_n=6)
             d["similar"] = [{"id": n.get("id"), "title": n.get("title"), "year": n.get("year"), "poster": n.get("poster")} for n in neigh if n.get("id") != d.get("id")][:5]

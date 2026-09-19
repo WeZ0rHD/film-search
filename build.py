@@ -13,7 +13,8 @@ sys.path.insert(0, BASE)
 
 def main():
     t0 = time.time()
-    for fn in ("film_search.py", "providers.py", "server.py", "run_acceptance.py"):
+    for fn in ("film_search.py", "providers.py", "server.py", "run_acceptance.py",
+               "run_benchmark.py", "run_runtime_proof.py"):
         py_compile.compile(os.path.join(BASE, fn), doraise=True)
         print(f"compile OK {fn}", flush=True)
     import providers as prov
