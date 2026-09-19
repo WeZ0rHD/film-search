@@ -1,4 +1,6 @@
+# film-search scoped repo — runtime state, never committed
 __pycache__/
+node_modules/
 data/film_app.sqlite*
 data/film_catalog.sqlite*
 data/catalog.db*
@@ -10,9 +12,12 @@ data/golden.json
 data/exposure.json
 data/favorites.json
 data/feedback.json
+data/history.json
 data/history.jsonl
 data/*.log
 data/*.err
 data/*.build
 data/live_cache.json
 data/live_cache.json.tmp
+*.log
+*.bak
