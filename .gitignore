@@ -14,3 +14,5 @@ data/history.jsonl
 data/*.log
 data/*.err
 data/*.build
+data/live_cache.json
+data/live_cache.json.tmp

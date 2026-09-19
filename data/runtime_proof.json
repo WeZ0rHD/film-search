@@ -1,0 +1,13 @@
+{
+ "port": 43147,
+ "steps": [
+  "health ok local=62",
+  "youth n=8 top=['Lady Bird', 'Mid90s', 'Eighth Grade']",
+  "providers n=8",
+  "similar n=6",
+  "detail Lady Bird similar=5",
+  "ui ok (compare+sources)",
+  "restart-persist ok"
+ ],
+ "ok": true
+}
