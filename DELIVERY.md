@@ -15,7 +15,7 @@
 ## FINAL FLAGS
 
 ```
-HEAD=0cd7802dd55164bdb5aabbf3dbb0189a82d1f3a4
+HEAD=9481008 (review-debt fixes on union preview; delivered code = this commit)
 SOURCES=local-catalog(62)+tvmaze-public+tmdb-optional-key
 SEMANTIC_QUERY=FR/EN genres+moods+themes+year-range+country+age+type+rating+similar-to+negation+underrated+people
 RANKING=multi-pass(lexical/semantic/second-hop/people/FTS5)+RRF(k=60)+MMR(λ=0.72)+quality-prior+liked-taste+explainable-reason
