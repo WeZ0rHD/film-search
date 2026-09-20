@@ -17,6 +17,9 @@ PORT = int(os.environ.get("FILM_SEARCH_PORT", "43140"))
 LOCAL = prov.load_local()
 BY_ID = {it["id"]: it for it in LOCAL}
 LIVE_CACHE = {}
+# Bound the in-process live cache: detail lookup falls back to disk-cached
+# metadata (DISK_CACHE) when an id has been evicted (see /api/detail).
+LIVE_CACHE_MAX = 400
 # Stable-metadata disk cache for live enrichment (survives restart, TTL 7d).
 # In-memory LIVE_CACHE stays authoritative for /api/detail in this process;
 # disk cache lets offline/restared runs reuse last good live metadata.
@@ -35,7 +38,8 @@ def bump_exposure(ids):
 def liked_signatures():
     favs = store.get_favorites()
     fb = store.get_feedback()
-    liked_ids = set([f["id"] for f in favs] + [k for k, v in fb.items() if v.get("value", 0) > 0])
+    liked_ids = set([f["id"] for f in favs] + [k for k, v in fb.items()
+                                                   if isinstance(v, dict) and v.get("value", 0) > 0])
     genres, themes = set(), set()
     for lid in liked_ids:
         it = BY_ID.get(lid) or LIVE_CACHE.get(lid)
@@ -70,6 +74,8 @@ def do_search(query, filters, limit=12, use_live=True):
                     pass
     for it in live:
         LIVE_CACHE[it["id"]] = it
+    while len(LIVE_CACHE) > LIVE_CACHE_MAX:
+        LIVE_CACHE.pop(next(iter(LIVE_CACHE)))
     merged = pool + live
     # dedupe merged by title|year BEFORE search (keep local first, merge sources)
     seen = {}
@@ -136,6 +142,16 @@ class Handler(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(body)
 
+    @staticmethod
+    def _num(raw, kind, default=None):
+        """Parse an optional numeric query param. Returns (ok, value)."""
+        if raw in (None, ""):
+            return True, default
+        try:
+            return True, kind(raw)
+        except (TypeError, ValueError):
+            return False, default
+
     def do_GET(self):
         u = urllib.parse.urlparse(self.path)
         path = u.path
@@ -156,12 +172,26 @@ class Handler(BaseHTTPRequestHandler):
             if g("country_code"): filters["country_code"] = g("country_code")
             if g("age"): filters["age"] = g("age")
             if g("mood"): filters["mood"] = g("mood")
-            if g("year_min"): filters["year_min"] = int(g("year_min"))
-            if g("year_max"): filters["year_max"] = int(g("year_max"))
-            if g("min_rating"): filters["min_rating"] = float(g("min_rating"))
+            ok, v = self._num(g("year_min"), int)
+            if not ok:
+                return self._send(400, {"error": "invalid year_min"})
+            if v is not None:
+                filters["year_min"] = v
+            ok, v = self._num(g("year_max"), int)
+            if not ok:
+                return self._send(400, {"error": "invalid year_max"})
+            if v is not None:
+                filters["year_max"] = v
+            ok, v = self._num(g("min_rating"), float)
+            if not ok:
+                return self._send(400, {"error": "invalid min_rating"})
+            if v is not None:
+                filters["min_rating"] = v
             if g("providers"):
                 filters["need_providers"] = [p.strip() for p in g("providers").split(",") if p.strip()]
-            limit = int(g("limit", "12") or 12)
+            ok, limit = self._num(g("limit", "12") or "12", int, 12)
+            if not ok or limit < 1:
+                return self._send(400, {"error": "invalid limit"})
             use_live = g("live", "1") != "0"
             results = do_search(g("q", ""), filters, limit=min(limit, 24), use_live=use_live)
             return self._send(200, {"query": g("q", ""), "filters": filters, "count": len(results), "results": results,
@@ -169,12 +199,27 @@ class Handler(BaseHTTPRequestHandler):
                                                 "live_disk_cache": len(DISK_CACHE)}})
         if path == "/api/similar":
             title = g("title", "")
-            results = do_search(f"similar to {title}", {}, limit=int(g("limit", "12") or 12), use_live=True)
+            ok, slim = self._num(g("limit", "12") or "12", int, 12)
+            if not ok or slim < 1:
+                return self._send(400, {"error": "invalid limit"})
+            results = do_search(f"similar to {title}", {}, limit=min(slim, 24), use_live=True)
             # drop exact anchor if first
             return self._send(200, {"title": title, "count": len(results), "results": results})
         if path == "/api/detail":
             _id = g("id", "")
             it = BY_ID.get(_id) or LIVE_CACHE.get(_id)
+            if not it:
+                # evicted from the bounded in-process cache? fall back to
+                # disk-cached live metadata before giving up.
+                for entry in DISK_CACHE.values():
+                    if not isinstance(entry, dict):
+                        continue
+                    for cand in (entry.get("items") or []):
+                        if isinstance(cand, dict) and cand.get("id") == _id:
+                            it = cand
+                            break
+                    if it:
+                        break
             if not it:
                 return self._send(404, {"error": "not found"})
             d = dict(it)
@@ -204,6 +249,8 @@ class Handler(BaseHTTPRequestHandler):
             data = {}
         if u.path == "/api/favorites":
             _id = data.get("id", "")
+            if not _id:
+                return self._send(400, {"error": "id required"})
             action = data.get("action", "toggle")
             it = BY_ID.get(_id) or LIVE_CACHE.get(_id)
             if action == "remove" or (action == "toggle" and store.is_favorite(_id)):
@@ -216,6 +263,8 @@ class Handler(BaseHTTPRequestHandler):
             return self._send(200, {"favorited": True})
         if u.path == "/api/feedback":
             _id = data.get("id", "")
+            if not _id:
+                return self._send(400, {"error": "id required"})
             value = int(data.get("value", 1))
             store.set_feedback(_id, value)
             # dislike => stronger exposure penalty next time

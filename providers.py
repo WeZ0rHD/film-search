@@ -8,6 +8,7 @@ import json
 import os
 import re
 import sqlite3
+import threading
 import html
 import urllib.parse
 import urllib.request
@@ -16,6 +17,9 @@ BASE = os.path.dirname(os.path.abspath(__file__))
 CATALOG_PATH = os.path.join(BASE, "data", "catalog.json")
 LIVE_CACHE_PATH = os.path.join(BASE, "data", "live_cache.json")
 LIVE_CACHE_TTL_S = 7 * 24 * 3600
+# Guards the read-modify-write cycle in save_live_cache so concurrent
+# request threads cannot interleave reads/writes or share the tmp file.
+_CACHE_LOCK = threading.Lock()
 
 TVMAZE_SEARCH = "https://api.tvmaze.com/search/shows?q={q}"
 TVMAZE_CAST = "https://api.tvmaze.com/shows/{sid}/cast"
@@ -64,22 +68,26 @@ def save_live_cache(query: str, items: list) -> None:
     if not key:
         return
     try:
-        try:
-            with open(LIVE_CACHE_PATH, encoding="utf-8") as f:
-                data = json.load(f)
-        except (OSError, ValueError):
-            data = {}
-        if not isinstance(data, dict):
-            data = {}
-        data[key] = {"ts": _t.time(), "items": items}
-        # cap cache at 60 queries to bound disk
-        if len(data) > 60:
-            ordered = sorted(data.items(), key=lambda kv: kv[1].get("ts", 0))
-            data = dict(ordered[-60:])
-        tmp = LIVE_CACHE_PATH + ".tmp"
-        with open(tmp, "w", encoding="utf-8") as f:
-            json.dump(data, f, ensure_ascii=False)
-        os.replace(tmp, LIVE_CACHE_PATH)
+        with _CACHE_LOCK:
+            try:
+                with open(LIVE_CACHE_PATH, encoding="utf-8") as f:
+                    data = json.load(f)
+            except (OSError, ValueError):
+                data = {}
+            if not isinstance(data, dict):
+                data = {}
+            else:
+                # drop corrupt non-dict entries so the cap sort below stays safe
+                data = {k: v for k, v in data.items() if isinstance(v, dict)}
+            data[key] = {"ts": _t.time(), "items": items}
+            # cap cache at 60 queries to bound disk
+            if len(data) > 60:
+                ordered = sorted(data.items(), key=lambda kv: kv[1].get("ts", 0))
+                data = dict(ordered[-60:])
+            tmp = LIVE_CACHE_PATH + ".tmp"
+            with open(tmp, "w", encoding="utf-8") as f:
+                json.dump(data, f, ensure_ascii=False)
+            os.replace(tmp, LIVE_CACHE_PATH)
     except OSError:
         pass
 

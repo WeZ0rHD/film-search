@@ -159,11 +159,18 @@ def main():
         fails.append(f"irrelevant rate too high: {irr_rate:.2f} > 0.35")
     if tot_violations:
         fails.append(f"total hard violations {tot_violations} > 0")
-    # live smoke: TVMaze public, fail-soft but reported
+    # live smoke: TVMaze public, fail-soft but reported.
+    # Reachability is probed via the raw HTTP helper: tvmaze_search is
+    # fail-soft (returns [] offline too), so it cannot prove reachability.
     smoke = {"tvmaze_reachable": False, "results": 0, "cached_write": False, "note": ""}
     try:
-        live = prov.tvmaze_search("Heartstopper", limit=5)
+        prov._http_json(prov.TVMAZE_SEARCH.format(q="Heartstopper"), timeout=6)
         smoke["tvmaze_reachable"] = True
+    except Exception as e:
+        smoke["note"] = f"TVMaze unreachable: {e}"
+        print(f"live smoke FAILED: {e}")
+    try:
+        live = prov.tvmaze_search("Heartstopper", limit=5)
         smoke["results"] = len(live)
         titles = [x.get("title", "") for x in live]
         smoke["titles"] = titles[:5]
@@ -176,7 +183,8 @@ def main():
             smoke["note"] = f"cache write failed: {e}"
         print(f"live smoke TVMaze Heartstopper: {titles}")
     except Exception as e:
-        smoke["note"] = f"TVMaze unreachable: {e}"
+        if not smoke["note"]:
+            smoke["note"] = f"TVMaze search failed: {e}"
         print(f"live smoke FAILED: {e}")
     ok = not fails
     print("FAILURES:" if fails else "BENCHMARK_OK")

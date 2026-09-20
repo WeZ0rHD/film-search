@@ -25,9 +25,10 @@ METADATA=title/year/type/genres/moods/themes/country/age/cast/director/synopsis/
 FILTERS=genre/mood/type/country/year-min-max/min-rating/age/providers(need_providers)+explicit-country/year-from-query
 HISTORY=jsonl-append + exposure-memory anti-repeat (penalty + dislike x2), restart-persistent
 UI=single-file ui.html (search+filters+cards+reasons+detail-modal+similar+favorites+history+letterboxd-import)
-TESTS=14-unittest-OK (semantic/ranking/dedupe/exclusion/need-providers/similar/underrated/antirepeat/filters/fts/acceptance-breadth)
-BUILD=OK (py_compile x4 + FTS5-memory warmup 30 hits + 14 tests, 41.3s, receipt data/build.json)
-RUNTIME=GOLDEN_OK http://127.0.0.1:43140 (health/search-x2-need_providers/similar/detail/favorite/feedback/history/import/UI) + RESTART_PERSIST_OK
+TESTS=19-unittest-OK (semantic/ranking/dedupe/exclusion/need-providers/similar/underrated/antirepeat/filters/fts/acceptance-breadth/sources-cache/hermetic-live)
+BUILD=OK (py_compile x7 + FTS5-memory warmup 30 hits + 19 tests, receipt data/build.json)
+BENCHMARK=OK (15 queries, 0 hard-violations, 0 dups, irrelevant<=0.35, breadth>=30, TVMaze live smoke reachable, receipt data/benchmark.json)
+RUNTIME=RUNTIME_PROOF_OK http://127.0.0.1:43147 (health/search-youth/providers-hardfilter/similar/detail/favorite/feedback/history/import/UI-compare-sources) + RESTART_PERSIST_OK (receipt data/runtime_proof.json)
 FILM_SEARCH_GREEN=true
 ```
 

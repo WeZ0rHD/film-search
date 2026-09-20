@@ -182,27 +182,31 @@ class TestSourcesAndCache(unittest.TestCase):
                          "https://www.themoviedb.org/movie/456")
 
     def test_live_cache_roundtrip_failsoft(self):
-        # save + load roundtrip (uses real file, cleans its own key)
-        prov.save_live_cache("test-cache-roundtrip-xyz", [{"id": "x", "title": "X"}])
-        data = prov.load_live_cache()
-        self.assertIn("test-cache-roundtrip-xyz", data)
-        # cleanup test key to keep cache tidy
+        # save + load roundtrip in an ISOLATED tmp cache (never touches the
+        # real data/live_cache.json).
+        import tempfile
+        tmpd = tempfile.TemporaryDirectory()
         try:
-            import json as _j, os as _o
-            p = prov.LIVE_CACHE_PATH
-            with open(p, encoding="utf-8") as _f:
-                d = _j.load(_f)
-            d.pop("test-cache-roundtrip-xyz", None)
-            tmp = p + ".tmp"
-            with open(tmp, "w", encoding="utf-8") as _f:
-                _f.write(_j.dumps(d, ensure_ascii=False))
-            _o.replace(tmp, p)
-        except (OSError, ValueError):
-            pass
+            orig = prov.LIVE_CACHE_PATH
+            prov.LIVE_CACHE_PATH = os.path.join(tmpd.name, "live_cache.json")
+            try:
+                prov.save_live_cache("test-cache-roundtrip-xyz", [{"id": "x", "title": "X"}])
+                data = prov.load_live_cache()
+                self.assertIn("test-cache-roundtrip-xyz", data)
+            finally:
+                prov.LIVE_CACHE_PATH = orig
+        finally:
+            tmpd.cleanup()
 
     def test_tvmaze_failsoft_never_raises(self):
-        # must return a list even offline (fail-soft), never raise
-        res = prov.tvmaze_search("zxqw-heartstopper-unlikely-xyz", limit=3)
+        # must return a list even offline (fail-soft), never raise.
+        # Patched at the HTTP layer: no real network access in unit tests.
+        orig = prov._http_json
+        prov._http_json = lambda *a, **k: (_ for _ in ()).throw(OSError("offline-simulated"))
+        try:
+            res = prov.tvmaze_search("zxqw-heartstopper-unlikely-xyz", limit=3)
+        finally:
+            prov._http_json = orig
         self.assertIsInstance(res, list)
 
     def test_hard_violations_zero_on_gated_queries(self):

@@ -36,14 +36,27 @@ def save(name, obj):
                 json.dump(obj, f, ensure_ascii=False)
             os.replace(tmp, p)
         except OSError:
-            # fallback: direct write (proven primitive on this host)
+            # fallback: retry via a FRESH tmp name, then replace.
+            # Never open the live destination with truncating "w": a failed
+            # write would destroy the existing document.
             try:
                 if os.path.exists(tmp):
                     os.remove(tmp)
             except OSError:
                 pass
-            with open(p, "w", encoding="utf-8") as f:
-                json.dump(obj, f, ensure_ascii=False)
+            try:
+                retry = None
+                retry = f"{p}.{os.getpid()}.tmp"
+                with open(retry, "w", encoding="utf-8") as f:
+                    json.dump(obj, f, ensure_ascii=False)
+                os.replace(retry, p)
+            except OSError as e:
+                try:
+                    if retry and os.path.exists(retry):
+                        os.remove(retry)
+                except OSError:
+                    pass
+                print(f"store.save failed for {name}: {e}", flush=True)
 
 
 # ---- history (append JSONL) ----

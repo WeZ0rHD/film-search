@@ -514,17 +514,24 @@ def poster_for(it: dict) -> str:
     if path.startswith("/"):
         return "https://image.tmdb.org/t/p/w500" + path
     # deterministic SVG placeholder (clean, not slop)
+    # NOTE: hue derives from a stable md5 digest, NOT hash() (which is
+    # randomized per process and would change poster colors on restart).
+    import base64
+    import hashlib
+    from xml.sax.saxutils import escape as _xml_escape
     title = (it.get("title") or "?")[:22]
     year = it.get("year", "")
-    hue = abs(hash(it.get("id", title))) % 360
+    seed = str(it.get("id") or title)
+    hue = int(hashlib.md5(seed.encode("utf-8")).hexdigest(), 16) % 360
+    title_x = _xml_escape(title)
+    year_x = _xml_escape(str(year))
     svg = (f"<svg xmlns='http://www.w3.org/2000/svg' width='500' height='750'>"
            f"<defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'>"
            f"<stop offset='0' stop-color='hsl({hue},32%,22%)'/>"
            f"<stop offset='1' stop-color='hsl({(hue+40)%360},30%,12%)'/></linearGradient></defs>"
            f"<rect width='500' height='750' fill='url(#g)'/>"
-           f"<text x='36' y='380' font-family='Arial' font-size='40' fill='white'>{title}</text>"
-           f"<text x='36' y='430' font-family='Arial' font-size='30' fill='#cccccc'>{year}</text></svg>")
-    import base64
+           f"<text x='36' y='380' font-family='Arial' font-size='40' fill='white'>{title_x}</text>"
+           f"<text x='36' y='430' font-family='Arial' font-size='30' fill='#cccccc'>{year_x}</text></svg>")
     return "data:image/svg+xml;base64," + base64.b64encode(svg.encode("utf-8")).decode("ascii")
 
 

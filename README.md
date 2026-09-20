@@ -61,16 +61,18 @@ UI : cartes visuelles + filtres + **comparaison (max 3)** + favoris +
 historique + import Letterboxd + **« pourquoi ce match »** + **liens sources**.
 Pas de disponibilité streaming inventée.
 
-Persistance SQLite `data/app.db` (historique, favoris, feedback, exposition) —
-survit au restart (WAL). Catalogue FTS5 `data/catalog.db` reconstruit au boot.
+Persistance JSON sous `data/` (`favorites.json`, `feedback.json`,
+`exposure.json`, `history.jsonl`) — écritures atomiques (tmp+replace),
+survit au restart. Catalogue FTS5 `sqlite3` **en mémoire**, reconstruit
+via `providers.fts_mem_ranks` à chaque recherche (aucun fichier DB écrit).
 
 ## Vérification
 
 ```bat
-C:\Python314\python.exe -u -m unittest tests.test_film_search
-C:\Python314\python.exe -u -c "import run_acceptance as ra; ra.main()"
-C:\Python314\python.exe -u run_benchmark.py
-C:\Python314\python.exe -u run_runtime_proof.py
+python -u -m unittest tests.test_film_search
+python -u -c "import run_acceptance as ra; ra.main()"
+python -u run_benchmark.py
+python -u run_runtime_proof.py
 ```
 
 Voir `DELIVERY.md` pour les preuves finales (HEAD/SOURCES/.../FILM_SEARCH_GREEN).

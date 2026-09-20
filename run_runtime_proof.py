@@ -50,9 +50,9 @@ def main():
     env = dict(os.environ)
     env["FILM_SEARCH_PORT"] = str(PORT)
     proc = subprocess.Popen([sys.executable, "-u", os.path.join(BASE, "server.py")],
-                            cwd=BASE, env=env,
-                            stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
-    proof = {"port": PORT, "steps": []}
+                             cwd=BASE, env=env,
+                             stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
+    proof = {"port": PORT, "steps": [], "ok": False}
     try:
         health = wait_health(proc)
         assert health.get("ok") and health.get("local", 0) >= 60, f"bad health {health}"
@@ -104,6 +104,11 @@ def main():
         assert any(f["id"] == fid for f in favs2.get("favorites", [])), "favorite not restart-persistent"
         proof["steps"].append("restart-persist ok")
         proof["ok"] = True
+    except Exception as e:
+        # Record the failure in the receipt instead of dying without one,
+        # then let cleanup run and propagate the failure via exit code.
+        proof["ok"] = False
+        proof["error"] = f"{type(e).__name__}: {e}"
     finally:
         try:
             if proc.poll() is None:
