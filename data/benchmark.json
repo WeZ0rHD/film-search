@@ -1,0 +1,440 @@
+{
+ "catalog_n": 62,
+ "n_queries": 15,
+ "queries": [
+  {
+   "label": "youth/teen drama",
+   "query": "youth teen drama coming of age at school",
+   "filters": {},
+   "n": 8,
+   "top3": [
+    [
+     "The Perks of Being a Wallflower",
+     2012,
+     16.052
+    ],
+    [
+     "Lady Bird",
+     2017,
+     15.942
+    ],
+    [
+     "Mid90s",
+     2018,
+     15.101
+    ]
+   ],
+   "duplicates": 0,
+   "violations": [],
+   "irrelevant": 0,
+   "missing_meta": []
+  },
+  {
+   "label": "recent youth/teen drama",
+   "query": "recent teen drama high school 2020s heartfelt",
+   "filters": {},
+   "n": 8,
+   "top3": [
+    [
+     "Euphoria",
+     2019,
+     11.813
+    ],
+    [
+     "Call Me by Your Name",
+     2017,
+     10.191
+    ],
+    [
+     "Eighth Grade",
+     2018,
+     10.722
+    ]
+   ],
+   "duplicates": 0,
+   "violations": [],
+   "irrelevant": 0,
+   "missing_meta": []
+  },
+  {
+   "label": "recent youth heartwarming",
+   "query": "heartwarming teen series friendship 2022",
+   "filters": {
+    "type": "series"
+   },
+   "n": 8,
+   "top3": [
+    [
+     "Stranger Things",
+     2016,
+     10.501
+    ],
+    [
+     "Sex Education",
+     2019,
+     10.396
+    ],
+    [
+     "Euphoria",
+     2019,
+     10.41
+    ]
+   ],
+   "duplicates": 0,
+   "violations": [],
+   "irrelevant": 2,
+   "missing_meta": []
+  },
+  {
+   "label": "startup/business",
+   "query": "startup business entrepreneur tech silicon valley ambition",
+   "filters": {},
+   "n": 8,
+   "top3": [
+    [
+     "Silicon Valley",
+     2014,
+     14.866
+    ],
+    [
+     "The Social Network",
+     2010,
+     10.516
+    ],
+    [
+     "Halt and Catch Fire",
+     2014,
+     10.52
+    ]
+   ],
+   "duplicates": 0,
+   "violations": [],
+   "irrelevant": 0,
+   "missing_meta": []
+  },
+  {
+   "label": "crime/thriller",
+   "query": "crime thriller heist tension investigation",
+   "filters": {},
+   "n": 8,
+   "top3": [
+    [
+     "Money Heist",
+     2017,
+     15.468
+    ],
+    [
+     "Se7en",
+     1995,
+     14.145
+    ],
+    [
+     "Breaking Bad",
+     2008,
+     11.887
+    ]
+   ],
+   "duplicates": 0,
+   "violations": [],
+   "irrelevant": 0,
+   "missing_meta": []
+  },
+  {
+   "label": "melancholic",
+   "query": "melancholic slow reflective sadness loneliness",
+   "filters": {},
+   "n": 8,
+   "top3": [
+    [
+     "Lost in Translation",
+     2003,
+     11.102
+    ],
+    [
+     "Columbus",
+     2017,
+     10.784
+    ],
+    [
+     "Manchester by the Sea",
+     2016,
+     11.089
+    ]
+   ],
+   "duplicates": 0,
+   "violations": [],
+   "irrelevant": 0,
+   "missing_meta": []
+  },
+  {
+   "label": "underrated gems",
+   "query": "underrated hidden gems overlooked",
+   "filters": {},
+   "n": 8,
+   "top3": [
+    [
+     "Halt and Catch Fire",
+     2014,
+     5.754
+    ],
+    [
+     "Coherence",
+     2013,
+     5.505
+    ],
+    [
+     "Eighth Grade",
+     2018,
+     5.447
+    ]
+   ],
+   "duplicates": 0,
+   "violations": [],
+   "irrelevant": 0,
+   "missing_meta": []
+  },
+  {
+   "label": "similar Breaking Bad",
+   "query": "similar to Breaking Bad",
+   "filters": {},
+   "n": 8,
+   "top3": [
+    [
+     "The Godfather",
+     1972,
+     5.499
+    ],
+    [
+     "Se7en",
+     1995,
+     5.351
+    ],
+    [
+     "Dark",
+     2017,
+     4.851
+    ]
+   ],
+   "duplicates": 0,
+   "violations": [],
+   "irrelevant": 0,
+   "missing_meta": []
+  },
+  {
+   "label": "similar Parasite",
+   "query": "similar to Parasite",
+   "filters": {},
+   "n": 8,
+   "top3": [
+    [
+     "Breaking Bad",
+     2008,
+     5.601
+    ],
+    [
+     "Dark",
+     2017,
+     4.855
+    ],
+    [
+     "Money Heist",
+     2017,
+     5.27
+    ]
+   ],
+   "duplicates": 0,
+   "violations": [],
+   "irrelevant": 0,
+   "missing_meta": []
+  },
+  {
+   "label": "france 2010s hard",
+   "query": "French drama 2010s",
+   "filters": {},
+   "n": 7,
+   "top3": [
+    [
+     "Intouchables",
+     2011,
+     7.717
+    ],
+    [
+     "Grave",
+     2016,
+     7.243
+    ],
+    [
+     "Les Miserables",
+     2019,
+     7.4
+    ]
+   ],
+   "duplicates": 0,
+   "violations": [],
+   "irrelevant": 0,
+   "missing_meta": []
+  },
+  {
+   "label": "sci-fi breadth",
+   "query": "sci-fi mind-bending time travel",
+   "filters": {},
+   "n": 8,
+   "top3": [
+    [
+     "Dark",
+     2017,
+     7.159
+    ],
+    [
+     "Dune: Part Two",
+     2024,
+     6.379
+    ],
+    [
+     "Interstellar",
+     2014,
+     6.501
+    ]
+   ],
+   "duplicates": 0,
+   "violations": [],
+   "irrelevant": 0,
+   "missing_meta": []
+  },
+  {
+   "label": "family feel-good",
+   "query": "comedie feel-good famille",
+   "filters": {
+    "age": "family"
+   },
+   "n": 8,
+   "top3": [
+    [
+     "Intouchables",
+     2011,
+     8.722
+    ],
+    [
+     "Coco",
+     2017,
+     5.816
+    ],
+    [
+     "Amelie",
+     2001,
+     4.26
+    ]
+   ],
+   "duplicates": 0,
+   "violations": [],
+   "irrelevant": 2,
+   "missing_meta": []
+  },
+  {
+   "label": "negation no-horror",
+   "query": "melancholic drama without horror, sans violence",
+   "filters": {},
+   "n": 8,
+   "top3": [
+    [
+     "Broadchurch",
+     2013,
+     6.811
+    ],
+    [
+     "Her",
+     2013,
+     6.758
+    ],
+    [
+     "The Perks of Being a Wallflower",
+     2012,
+     6.743
+    ]
+   ],
+   "duplicates": 0,
+   "violations": [],
+   "irrelevant": 0,
+   "missing_meta": []
+  },
+  {
+   "label": "providers Netflix",
+   "query": "drama",
+   "filters": {
+    "need_providers": [
+     "Netflix"
+    ]
+   },
+   "n": 8,
+   "top3": [
+    [
+     "Breaking Bad",
+     2008,
+     4.458
+    ],
+    [
+     "Sex Education",
+     2019,
+     4.177
+    ],
+    [
+     "A Ghost Story",
+     2017,
+     3.637
+    ]
+   ],
+   "duplicates": 0,
+   "violations": [],
+   "irrelevant": 0,
+   "missing_meta": []
+  },
+  {
+   "label": "series only",
+   "query": "teen drama",
+   "filters": {
+    "type": "series"
+   },
+   "n": 8,
+   "top3": [
+    [
+     "Euphoria",
+     2019,
+     10.411
+    ],
+    [
+     "Stranger Things",
+     2016,
+     7.294
+    ],
+    [
+     "Sex Education",
+     2019,
+     10.396
+    ]
+   ],
+   "duplicates": 0,
+   "violations": [],
+   "irrelevant": 0,
+   "missing_meta": []
+  }
+ ],
+ "unique_total": 53,
+ "total_results": 119,
+ "hard_violations": 0,
+ "duplicates": 0,
+ "irrelevant": 4,
+ "irrelevant_rate": 0.034,
+ "live_smoke": {
+  "tvmaze_reachable": true,
+  "results": 2,
+  "cached_write": true,
+  "note": "",
+  "titles": [
+   "Heartstopper",
+   "Heartstopper Forever: The Official Podcast"
+  ]
+ },
+ "failures": [],
+ "ok": true,
+ "seconds": 5.2
+}

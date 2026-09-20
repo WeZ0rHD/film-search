@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Film Search — découverte agentique</title>
+<style>
+:root{--bg:#fafafa;--fg:#1a1a1a;--mut:#666;--line:#e5e5e5;--acc:#0f62fe;--card:#fff}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.5 -apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+header{border-bottom:1px solid var(--line);background:#fff;position:sticky;top:0;z-index:5}
+.wrap{max-width:1080px;margin:0 auto;padding:14px 16px}
+h1{font-size:18px;margin:0 0 8px}.sub{color:var(--mut);font-size:13px;margin:0 0 10px}
+.searchrow{display:flex;gap:8px}input[type=text]{flex:1;padding:10px 12px;border:1px solid var(--line);border-radius:8px;font-size:15px}
+button{padding:10px 14px;border:1px solid var(--line);border-radius:8px;background:var(--acc);color:#fff;cursor:pointer}
+button.ghost{background:#fff;color:var(--fg)}
+.filters{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin-top:10px}
+.filters select,.filters input{padding:8px;border:1px solid var(--line);border-radius:8px;background:#fff;width:100%}
+main .wrap{display:grid;grid-template-columns:1fr 280px;gap:16px;align-items:start}
+@media(max-width:900px){main .wrap{grid-template-columns:1fr}}
+#results{display:grid;gap:12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px;display:grid;grid-template-columns:92px 1fr;gap:12px}
+.card img{width:92px;height:138px;object-fit:cover;border-radius:6px;background:#ddd}
+.card h3{margin:0 0 2px;font-size:16px}.meta{color:var(--mut);font-size:13px;margin:2px 0}
+.syn{font-size:14px;margin:6px 0}.reason{font-size:12.5px;color:#0b4f30;background:#eef7f1;border:1px solid #cde8d8;border-radius:6px;padding:6px 8px;margin-top:6px}
+.rowbtns{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}.rowbtns button{padding:6px 10px;font-size:13px}
+.side{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px;margin-bottom:12px}
+.side h2{font-size:14px;margin:0 0 8px}.side ul{margin:0;padding-left:18px;font-size:13.5px}
+dialog{border:1px solid var(--line);border-radius:12px;max-width:640px;width:92vw;padding:0}
+dialog .body{padding:16px}dialog img{width:150px;float:left;margin:0 12px 8px 0;border-radius:8px}
+.pill{display:inline-block;border:1px solid var(--line);border-radius:20px;padding:1px 8px;font-size:12px;margin:1px 2px;background:#f5f5f5}
+footer{color:var(--mut);font-size:12px;padding:18px;text-align:center}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<h1>Film Search</h1>
+<p class="sub">Requête naturelle FR/EN — genre, humeur, thèmes, année, pays, public, similaires. Sources : catalogue local + TVMaze (public) + TMDB (clé optionnelle).</p>
+<div class="searchrow">
+<input id="q" type="text" placeholder="ex : teen drama mélancolique • startup tech • crime thriller sans horreur • similar to Parasite" aria-label="Recherche">
+<button id="go">Rechercher</button>
+</div>
+<div class="filters">
+<select id="f_genre"><option value="">Genre : tous</option></select>
+<select id="f_mood"><option value="">Humeur : toutes</option><option>melancholic</option><option>feel-good</option><option>tense</option><option>reflective</option><option>uplifting</option><option>dark</option><option>dreamy</option><option>nostalgic</option><option>slow</option></select>
+<select id="f_type"><option value="">Type : tous</option><option value="movie">Films</option><option value="series">Séries</option></select>
+<select id="f_country"><option value="">Pays : tous</option><option value="US">USA</option><option value="GB">UK</option><option value="FR">France</option><option value="KR">Corée du Sud</option><option value="JP">Japon</option><option value="ES">Espagne</option><option value="DE">Allemagne</option><option value="NO">Norvège</option><option value="NZ">N-Zélande</option><option value="DK">Danemark</option></select>
+<select id="f_age"><option value="">Public : tous</option><option value="family">Famille</option><option value="teen">Ado</option></select>
+<input id="f_ymin" type="text" placeholder="Année min (ex 2010)">
+<input id="f_ymax" type="text" placeholder="Année max (ex 2023)">
+<input id="f_rating" type="text" placeholder="Note min (ex 7.5)">
+<input id="f_prov" type="text" placeholder="Providers (ex Netflix, MUBI)">
+</div>
+</div></header>
+<main><div class="wrap">
+<section>
+<div id="status" class="sub" style="margin:10px 0"></div>
+<div id="comparebar" class="sub" style="margin:0 0 10px;display:none"></div>
+<div id="results"></div>
+</section>
+<aside>
+<div class="side"><h2>Comparer (max 3)</h2><div id="cmp" class="sub">Sélectionnez « +Comparer » sur des cartes.</div><div style="margin-top:6px;display:flex;gap:6px"><button class="ghost" id="docmp">Comparer</button><button class="ghost" id="clearcmp">Effacer</button></div></div>
+<div class="side"><h2>Favoris</h2><ul id="favs"><li class="sub">—</li></ul></div>
+<div class="side"><h2>Historique</h2><ul id="hist"><li class="sub">—</li></ul></div>
+<div class="side"><h2>Import Letterboxd</h2>
+<p class="sub">Collez un CSV Letterboxd ou des lignes <i>Titre,Année</i>.</p>
+<textarea id="imp" rows="3" style="width:100%"></textarea>
+<button class="ghost" id="doimp" style="margin-top:6px">Importer</button>
+<div id="impmsg" class="sub"></div></div>
+</aside>
+</div></main>
+<dialog id="dlg"><div class="body" id="dlgbody"></div><div style="padding:0 16px 16px"><button class="ghost" onclick="document.getElementById('dlg').close()">Fermer</button></div></dialog>
+<dialog id="dlgcmp"><div class="body" id="dlgcmpbody"></div><div style="padding:0 16px 16px"><button class="ghost" onclick="document.getElementById('dlgcmp').close()">Fermer</button></div></dialog>
+<footer>Film Search — local d'abord, live en enrichissement. Disponibilités catalogue indicatives : à vérifier. Pas de tracking.</footer>
+<script>
+const $=id=>document.getElementById(id);
+const GENRES=["Drama","Comedy","Crime","Thriller","Sci-Fi","Romance","Coming-of-age","Business","Biography","Mystery","Action","Fantasy","Animation","Family","Documentary","Horror"];
+GENRES.forEach(g=>{const o=document.createElement('option');o.textContent=g;$('f_genre').appendChild(o)});
+function filters(){const v={};if($('f_genre').value)v.genre=$('f_genre').value;if($('f_mood').value)v.mood=$('f_mood').value;if($('f_type').value)v.type=$('f_type').value;if($('f_country').value)v.country_code=$('f_country').value;if($('f_age').value)v.age=$('f_age').value;if($('f_ymin').value)v.year_min=$('f_ymin').value;if($('f_ymax').value)v.year_max=$('f_ymax').value;if($('f_rating').value)v.min_rating=$('f_rating').value;if($('f_prov').value)v.providers=$('f_prov').value;return v}
+async function search(q){const p=new URLSearchParams({q,...filters(),limit:12});$('status').textContent='Recherche…';try{const r=await fetch('/api/search?'+p);if(!r.ok)throw new Error('HTTP '+r.status);const j=await r.json();lastResults=j.results||[];render(j);await refreshSide()}catch(e){$('status').textContent='Erreur recherche : '+e.message}}
+let lastResults=[],compareSel=[];
+function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;')}
+function safeUrl(u){u=String(u||'');return /^(https?:\/\/|data:image\/)/i.test(u)?u:''}
+function srcLinks(it){const s=(it._sources||it.sources||['local']).join(', ');const su=safeUrl(it.source_url);const u=su?` · <a href="${su}" target="_blank" rel="noopener">source ↗</a>`:'';return `Sources : ${esc(s)}${u}`}
+function provText(it){const p=(it.providers||[]).join(', ');return p?`Providers (catalogue, à vérifier) : ${esc(p)}`:'Providers : non renseigné — à vérifier (pas de dispo inventée)'}
+function render(j){$('status').textContent=j.count+' résultat(s) pour « '+esc(j.query||'parcours')+' »';const d=$('results');d.innerHTML='';j.results.forEach(it=>{const c=document.createElement('div');c.className='card';const inSel=compareSel.includes(it.id);c.innerHTML=`<img loading="lazy" src="${safeUrl(it.poster)}" alt="affiche ${esc(it.title)}" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22/>'"><div><h3>${esc(it.title)} <span class="meta">(${esc(it.year)} · ${esc(it.type)})</span></h3><div class="meta">${esc((it.genres||[]).join(' · '))} — ★ ${esc(it.rating)} — ${esc(it.country||'')} — ${esc(it.age||'')}</div><div>${(it.genres||[]).slice(0,4).map(g=>`<span class="pill">${esc(g)}</span>`).join('')}</div><div class="syn">${esc((it.synopsis||'').slice(0,220))}</div><div class="meta">Avec : ${esc((it.cast||[]).slice(0,4).join(', '))}${it.director?' — Réal. '+esc(it.director):''}</div><div class="reason">Pourquoi : ${esc(it.ranking_reason||'')}</div><div class="meta">${srcLinks(it)}<br>${provText(it)}</div><div class="rowbtns"><button data-a="detail">Détail</button><button class="ghost" data-a="sim">Similaires</button><button class="ghost" data-a="fav">★ Favori</button><button class="ghost" data-a="like">👍</button><button class="ghost" data-a="dislike">👎</button><button class="ghost" data-a="cmp" data-id="${esc(it.id)}">${inSel?'✓ Comparé':'+Comparer'}</button></div></div>`;c.querySelector('[data-a=detail]').onclick=()=>detail(it.id);c.querySelector('[data-a=sim]').onclick=()=>{$('q').value='similar to '+it.title;search($('q').value)};c.querySelector('[data-a=fav]').onclick=async()=>{try{await fetch('/api/favorites',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({id:it.id})})}catch(e){}refreshSide()};c.querySelector('[data-a=like]').onclick=()=>fetch('/api/feedback',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({id:it.id,value:1})});c.querySelector('[data-a=dislike]').onclick=()=>fetch('/api/feedback',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({id:it.id,value:-1})});c.querySelector('[data-a=cmp]').onclick=(e)=>toggleCmp(it.id,e.currentTarget);d.appendChild(c)});renderCmpBar()}
+function toggleCmp(id,btn){if(compareSel.includes(id))compareSel=compareSel.filter(x=>x!==id);else{if(compareSel.length>=3){alert('Max 3 à comparer');return}compareSel.push(id)}if(btn)btn.textContent=compareSel.includes(id)?'✓ Comparé':'+Comparer';renderCmpBar();searchRefreshCmpButtons()}
+function searchRefreshCmpButtons(){document.querySelectorAll('[data-a=cmp]').forEach(b=>{const id=b.getAttribute('data-id');b.textContent=compareSel.includes(id)?'✓ Comparé':'+Comparer'})}
+function renderCmpBar(){const bar=$('comparebar');if(!compareSel.length){bar.style.display='none';$('cmp').textContent='Sélectionnez « +Comparer » sur des cartes.';return}bar.style.display='block';bar.textContent=compareSel.length+' sélectionné(s) pour comparaison';$('cmp').textContent=compareSel.join(', ')}
+async function detail(id){try{const r=await fetch('/api/detail?id='+encodeURIComponent(id));if(!r.ok)throw new Error('HTTP '+r.status);const it=await r.json();$('dlgbody').innerHTML=`<img src="${safeUrl(it.poster)}"><h3>${esc(it.title)} (${esc(it.year)})</h3><p class="meta">${esc((it.genres||[]).join(' · '))} — ★ ${esc(it.rating)} — ${esc(it.runtime_min||'?')} min — ${esc(it.country||'')} ${esc(it.age||'')}</p><p>${esc(it.synopsis||'')}</p><p class="meta">Casting : ${esc((it.cast||[]).join(', '))}<br>Réalisation : ${esc(it.director||'—')}<br>${provText(it)}<br>${srcLinks(it)}</p><p><b>Similaires :</b> ${esc((it.similar||[]).map(s=>s.title+' ('+s.year+')').join(' · '))}</p>`;$('dlg').showModal()}catch(e){$('dlgbody').innerHTML=`<p>Erreur détail : ${esc(e.message)}</p>`;$('dlg').showModal()}}
+async function refreshSide(){try{const f=await (await fetch('/api/favorites')).json();$('favs').innerHTML=f.favorites.length?f.favorites.map(x=>`<li>${esc(x.title)} (${esc(x.year)})</li>`).join(''):'<li class="sub">—</li>';const h=await (await fetch('/api/history?limit=8')).json();$('hist').innerHTML=h.history.length?h.history.map(x=>`<li>${esc((x.query||'parcours').slice(0,42))} — ${x.cnt}</li>`).join(''):'<li class="sub">—</li>'}catch(e){}}
+$('go').onclick=()=>search($('q').value);$('q').addEventListener('keydown',e=>{if(e.key==='Enter')search($('q').value)});
+$('doimp').onclick=async()=>{try{const r=await fetch('/api/import',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text:$('imp').value})});if(!r.ok)throw new Error('HTTP '+r.status);const j=await r.json();$('impmsg').textContent=(j.count||0)+' importé(s)';refreshSide()}catch(e){$('impmsg').textContent='Erreur import : '+e.message}};
+$('clearcmp').onclick=()=>{compareSel=[];renderCmpBar();searchRefreshCmpButtons()};
+$('docmp').onclick=async()=>{if(compareSel.length<2){alert('Sélectionnez au moins 2 titres');return}const items=[];for(const id of compareSel){let it=lastResults.find(x=>x.id===id);if(!it){const r=await fetch('/api/detail?id='+encodeURIComponent(id));it=await r.json()}items.push(it)}const rows=[['Titre',...items.map(i=>i.title)],['Année / Type',...items.map(i=>i.year+' / '+i.type)],['Note',...items.map(i=>'★ '+i.rating)],['Genres',...items.map(i=>(i.genres||[]).join(', '))],['Humeurs',...items.map(i=>(i.moods||[]).join(', '))],['Public',...items.map(i=>i.age||'—')],['Pays',...items.map(i=>i.country||'—')],['Durée',...items.map(i=>(i.runtime_min||'?')+' min')],['Pourquoi',...items.map(i=>(i.ranking_reason||'').slice(0,120))],['Sources',...items.map(i=>(i._sources||i.sources||[]).join(','))]];$('dlgcmpbody').innerHTML='<h3>Comparaison</h3><table style="width:100%;border-collapse:collapse;font-size:13px">'+rows.map(r=>'<tr>'+r.map((c,ix)=>ix===0?`<th style="text-align:left;border:1px solid #e5e5e5;padding:6px;background:#f7f7f7">${esc(c)}</th>`:`<td style="border:1px solid #e5e5e5;padding:6px">${esc(c)}</td>`).join('')+'</tr>').join('')+'</table>';$('dlgcmp').showModal()};
+search('');
+</script>
+</body>
+</html>
